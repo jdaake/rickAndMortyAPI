@@ -236,25 +236,25 @@
       </h2>
     </div>
     <div class="uk-modal-body">
-      <span for="characterName">Character Name:</span>
+      <span for="characterName">Name:</span>
       <input
         bind:value={characterName}
         uk-tooltip="Enter Character Name"
         type="text"
         name="characterName" />
-      <span for="characterStatus">Character Status:</span>
+      <span for="characterStatus">Status:</span>
       <input
         bind:value={characterStatus}
         uk-tooltip="Dead, alive, or unknown"
         type="text"
         name="characterStatus" />
-      <span for="characterSpecies">Character Species:</span>
+      <span for="characterSpecies">Species:</span>
       <input
         bind:value={characterSpecies}
         uk-tooltip="Human, robot, unknown, etc."
         type="text"
         name="characterSpecies" />
-      <span for="characterGender">Character Gender:</span>
+      <span for="characterGender">Gender:</span>
       <input
         bind:value={characterGender}
         uk-tooltip="Male or Female"
