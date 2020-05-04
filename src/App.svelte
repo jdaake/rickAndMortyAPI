@@ -171,6 +171,12 @@
     font-family: monospace;
   }
 
+  button.toTop {
+    margin-top: -1rem;
+  }
+  button {
+    margin: 0.5rem;
+  }
   button:hover:enabled {
     color: #e40763;
   }
@@ -189,9 +195,7 @@
 
 <div class="container">
   <section class="uk-margin-bottom">
-    <button
-      class="uk-button uk-button-default uk-margin-right"
-      on:click={getCharacters}>
+    <button class="uk-button uk-button-default " on:click={getCharacters}>
       Get All Characters
     </button>
     <button
@@ -208,13 +212,13 @@
   <section in:fade={{ delay: 1000 }} out:fade={{ delay: 0 }}>
     {#if previousPage != '' || nextPage != ''}
       <button
-        class="uk-button uk-button-default uk-margin-right"
+        class="uk-button uk-button-default mainButton"
         on:click={getPreviousPage}
         disabled={prevIsDisabled}>
         <i class="fas fa-arrow-left" />
       </button>
       <button
-        class="uk-button uk-button-default uk-margin-right"
+        class="uk-button uk-button-default mainButton"
         on:click={getNextPage}
         disabled={nextIsDisabled}>
         <i class="fas fa-arrow-right" />
@@ -307,7 +311,7 @@
     class="uk-margin-bottom">
     {#if previousPage != '' || nextPage != ''}
       <button
-        class="uk-button uk-button-default uk-margin-right"
+        class="uk-button uk-button-default"
         on:click={getPreviousPage}
         disabled={prevIsDisabled}>
         <i class="fas fa-arrow-left" />
@@ -322,7 +326,7 @@
   </section>
   <section>
     <button
-      class="uk-button uk-button-default uk-margin-bottom"
+      class="uk-button uk-button-default toTop"
       uk-tooltip="Back to Top"
       on:click={() => {
         location.href = '#home';
