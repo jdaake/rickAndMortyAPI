@@ -170,6 +170,10 @@
     width: 100%;
     font-family: monospace;
   }
+  button > .magIcon:hover {
+    color: #e40763;
+  }
+
   @media (min-width: 768px) {
     section {
       grid-template-columns: repeat(2, 1fr);
@@ -194,7 +198,7 @@
       href="#search-modal"
       uk-toggle
       on:click={() => (hasError = false)}>
-      <i class="fas fa-search" />
+      <i class="fas fa-search magIcon" />
       Search
     </button>
   </section>
