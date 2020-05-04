@@ -38,6 +38,9 @@
         hasCharacters = true;
         nextPage = data.info.next ? data.info.next : "";
         previousPage = data.info.prev ? data.info.prev : "";
+      })
+      .catch(err => {
+        console.log(err);
       });
     checkPages();
   }
@@ -58,6 +61,9 @@
         nextPage = data.info.next ? data.info.next : "";
         previousPage = data.info.prev ? data.info.prev : "";
         hasCharacters = true;
+      })
+      .catch(err => {
+        console.log(err);
       });
     checkPages();
   }
@@ -72,6 +78,9 @@
         nextPage = data.info.next ? data.info.next : "";
         previousPage = data.info.prev ? data.info.prev : "";
         hasCharacters = true;
+      })
+      .catch(err => {
+        console.log(err);
       });
     checkPages();
   }
@@ -81,10 +90,6 @@
     let hasStatus = !status ? "" : status;
     let hasSpecies = !species ? "" : species;
     let hasGender = !gender ? "" : gender;
-    characterName = "";
-    characterStatus = "";
-    characterSpecies = "";
-    characterGender = "";
     hasError = false;
     await fetch(
       `https://rickandmortyapi.com/api/character/?name=${hasName}&status=${hasStatus}&species=${hasSpecies}&gender=${hasGender}`
@@ -108,6 +113,11 @@
         console.log(err);
       });
     checkPages();
+    // clear modal values
+    characterName = "";
+    characterStatus = "";
+    characterSpecies = "";
+    characterGender = "";
   }
 </script>
 
@@ -116,6 +126,8 @@
 
   h3 {
     font-family: "Permanent Marker", cursive;
+    text-align: center;
+    padding: 0 1.5rem 0 1.5rem;
   }
   h2 {
     font-family: monospace;
