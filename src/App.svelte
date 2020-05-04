@@ -170,7 +170,8 @@
     width: 100%;
     font-family: monospace;
   }
-  button > .magIcon:hover {
+
+  button:hover:enabled {
     color: #e40763;
   }
 
@@ -189,7 +190,7 @@
 <div class="container">
   <section class="uk-margin-bottom">
     <button
-      class="uk-button uk-button-default uk-margin-right main-button"
+      class="uk-button uk-button-default uk-margin-right"
       on:click={getCharacters}>
       Get All Characters
     </button>
@@ -198,7 +199,7 @@
       href="#search-modal"
       uk-toggle
       on:click={() => (hasError = false)}>
-      <i class="fas fa-search magIcon" />
+      <i class="fas fa-search" />
       Search
     </button>
   </section>

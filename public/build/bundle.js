@@ -1142,7 +1142,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (243:37) 
+    // (244:37) 
     function create_if_block_5(ctx) {
     	let section;
     	let h3;
@@ -1155,10 +1155,10 @@ var app = (function () {
     			section = element("section");
     			h3 = element("h3");
     			h3.textContent = "Get all Characters or Search for specific characters to get started.";
-    			attr_dev(h3, "class", "svelte-1j2kq8d");
-    			add_location(h3, file$2, 244, 4, 5891);
-    			attr_dev(section, "class", "svelte-1j2kq8d");
-    			add_location(section, file$2, 243, 2, 5843);
+    			attr_dev(h3, "class", "svelte-1hq4pdk");
+    			add_location(h3, file$2, 245, 4, 5869);
+    			attr_dev(section, "class", "svelte-1hq4pdk");
+    			add_location(section, file$2, 244, 2, 5821);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -1192,14 +1192,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(243:37) ",
+    		source: "(244:37) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (206:0) {#if hasCharacters}
+    // (207:0) {#if hasCharacters}
     function create_if_block_3(ctx) {
     	let section0;
     	let t0;
@@ -1241,12 +1241,12 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(button, "class", "uk-button uk-button-default svelte-1j2kq8d");
-    			add_location(button, file$2, 221, 4, 5206);
-    			attr_dev(section0, "class", "svelte-1j2kq8d");
-    			add_location(section0, file$2, 206, 2, 4688);
-    			attr_dev(section1, "class", "svelte-1j2kq8d");
-    			add_location(section1, file$2, 229, 2, 5408);
+    			attr_dev(button, "class", "uk-button uk-button-default svelte-1hq4pdk");
+    			add_location(button, file$2, 222, 4, 5184);
+    			attr_dev(section0, "class", "svelte-1hq4pdk");
+    			add_location(section0, file$2, 207, 2, 4666);
+    			attr_dev(section1, "class", "svelte-1hq4pdk");
+    			add_location(section1, file$2, 230, 2, 5386);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, section0, anchor);
@@ -1365,14 +1365,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(206:0) {#if hasCharacters}",
+    		source: "(207:0) {#if hasCharacters}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (208:4) {#if previousPage != '' || nextPage != ''}
+    // (209:4) {#if previousPage != '' || nextPage != ''}
     function create_if_block_4(ctx) {
     	let button0;
     	let i0;
@@ -1389,15 +1389,15 @@ var app = (function () {
     			button1 = element("button");
     			i1 = element("i");
     			attr_dev(i0, "class", "fas fa-arrow-left");
-    			add_location(i0, file$2, 212, 8, 4947);
-    			attr_dev(button0, "class", "uk-button uk-button-default uk-margin-right svelte-1j2kq8d");
+    			add_location(i0, file$2, 213, 8, 4925);
+    			attr_dev(button0, "class", "uk-button uk-button-default uk-margin-right svelte-1hq4pdk");
     			button0.disabled = /*prevIsDisabled*/ ctx[9];
-    			add_location(button0, file$2, 208, 6, 4801);
+    			add_location(button0, file$2, 209, 6, 4779);
     			attr_dev(i1, "class", "fas fa-arrow-right");
-    			add_location(i1, file$2, 218, 8, 5143);
-    			attr_dev(button1, "class", "uk-button uk-button-default uk-margin-right svelte-1j2kq8d");
+    			add_location(i1, file$2, 219, 8, 5121);
+    			attr_dev(button1, "class", "uk-button uk-button-default uk-margin-right svelte-1hq4pdk");
     			button1.disabled = /*nextIsDisabled*/ ctx[10];
-    			add_location(button1, file$2, 214, 6, 5001);
+    			add_location(button1, file$2, 215, 6, 4979);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, button0, anchor);
@@ -1433,14 +1433,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(208:4) {#if previousPage != '' || nextPage != ''}",
+    		source: "(209:4) {#if previousPage != '' || nextPage != ''}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (231:4) {#each characters as character}
+    // (232:4) {#each characters as character}
     function create_each_block(ctx) {
     	let current;
 
@@ -1496,14 +1496,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(231:4) {#each characters as character}",
+    		source: "(232:4) {#each characters as character}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (302:0) {#if hasCharacters}
+    // (303:0) {#if hasCharacters}
     function create_if_block_1(ctx) {
     	let section0;
     	let section0_intro;
@@ -1524,15 +1524,15 @@ var app = (function () {
     			section1 = element("section");
     			button = element("button");
     			i = element("i");
-    			attr_dev(section0, "class", "uk-margin-bottom svelte-1j2kq8d");
-    			add_location(section0, file$2, 302, 2, 7678);
+    			attr_dev(section0, "class", "uk-margin-bottom svelte-1hq4pdk");
+    			add_location(section0, file$2, 303, 2, 7656);
     			attr_dev(i, "class", "fas fa-arrow-up");
-    			add_location(i, file$2, 328, 6, 8413);
-    			attr_dev(button, "class", "uk-button uk-button-default uk-margin-bottom svelte-1j2kq8d");
+    			add_location(i, file$2, 329, 6, 8391);
+    			attr_dev(button, "class", "uk-button uk-button-default uk-margin-bottom svelte-1hq4pdk");
     			attr_dev(button, "uk-tooltip", "Back to Top");
-    			add_location(button, file$2, 322, 4, 8242);
-    			attr_dev(section1, "class", "svelte-1j2kq8d");
-    			add_location(section1, file$2, 321, 2, 8228);
+    			add_location(button, file$2, 323, 4, 8220);
+    			attr_dev(section1, "class", "svelte-1hq4pdk");
+    			add_location(section1, file$2, 322, 2, 8206);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, section0, anchor);
@@ -1589,14 +1589,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(302:0) {#if hasCharacters}",
+    		source: "(303:0) {#if hasCharacters}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (307:4) {#if previousPage != '' || nextPage != ''}
+    // (308:4) {#if previousPage != '' || nextPage != ''}
     function create_if_block_2(ctx) {
     	let button0;
     	let i0;
@@ -1613,15 +1613,15 @@ var app = (function () {
     			button1 = element("button");
     			i1 = element("i");
     			attr_dev(i0, "class", "fas fa-arrow-left");
-    			add_location(i0, file$2, 311, 8, 7974);
-    			attr_dev(button0, "class", "uk-button uk-button-default uk-margin-right svelte-1j2kq8d");
+    			add_location(i0, file$2, 312, 8, 7952);
+    			attr_dev(button0, "class", "uk-button uk-button-default uk-margin-right svelte-1hq4pdk");
     			button0.disabled = /*prevIsDisabled*/ ctx[9];
-    			add_location(button0, file$2, 307, 6, 7828);
+    			add_location(button0, file$2, 308, 6, 7806);
     			attr_dev(i1, "class", "fas fa-arrow-right");
-    			add_location(i1, file$2, 317, 8, 8154);
-    			attr_dev(button1, "class", "uk-button uk-button-default svelte-1j2kq8d");
+    			add_location(i1, file$2, 318, 8, 8132);
+    			attr_dev(button1, "class", "uk-button uk-button-default svelte-1hq4pdk");
     			button1.disabled = /*nextIsDisabled*/ ctx[10];
-    			add_location(button1, file$2, 313, 6, 8028);
+    			add_location(button1, file$2, 314, 6, 8006);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, button0, anchor);
@@ -1657,14 +1657,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(307:4) {#if previousPage != '' || nextPage != ''}",
+    		source: "(308:4) {#if previousPage != '' || nextPage != ''}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (335:0) {#if hasError}
+    // (336:0) {#if hasError}
     function create_if_block(ctx) {
     	let section;
     	let current;
@@ -1678,8 +1678,8 @@ var app = (function () {
     		c: function create() {
     			section = element("section");
     			create_component(erroralert.$$.fragment);
-    			attr_dev(section, "class", "svelte-1j2kq8d");
-    			add_location(section, file$2, 335, 2, 8509);
+    			attr_dev(section, "class", "svelte-1hq4pdk");
+    			add_location(section, file$2, 336, 2, 8487);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -1710,7 +1710,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(335:0) {#if hasError}",
+    		source: "(336:0) {#if hasError}",
     		ctx
     	});
 
@@ -1831,73 +1831,73 @@ var app = (function () {
     			t24 = space();
     			if (if_block2) if_block2.c();
     			if_block2_anchor = empty();
-    			attr_dev(button0, "class", "uk-button uk-button-default uk-margin-right main-button svelte-1j2kq8d");
-    			add_location(button0, file$2, 190, 4, 4288);
-    			attr_dev(i, "class", "fas fa-search magIcon svelte-1j2kq8d");
-    			add_location(i, file$2, 200, 6, 4583);
-    			attr_dev(button1, "class", "uk-button uk-button-default svelte-1j2kq8d");
+    			attr_dev(button0, "class", "uk-button uk-button-default uk-margin-right svelte-1hq4pdk");
+    			add_location(button0, file$2, 191, 4, 4286);
+    			attr_dev(i, "class", "fas fa-search");
+    			add_location(i, file$2, 201, 6, 4569);
+    			attr_dev(button1, "class", "uk-button uk-button-default svelte-1hq4pdk");
     			attr_dev(button1, "href", "#search-modal");
     			attr_dev(button1, "uk-toggle", "");
-    			add_location(button1, file$2, 195, 4, 4441);
-    			attr_dev(section, "class", "uk-margin-bottom svelte-1j2kq8d");
-    			add_location(section, file$2, 189, 2, 4249);
-    			attr_dev(div0, "class", "container svelte-1j2kq8d");
-    			add_location(div0, file$2, 188, 0, 4223);
-    			attr_dev(button2, "class", "uk-modal-close-default");
+    			add_location(button1, file$2, 196, 4, 4427);
+    			attr_dev(section, "class", "uk-margin-bottom svelte-1hq4pdk");
+    			add_location(section, file$2, 190, 2, 4247);
+    			attr_dev(div0, "class", "container svelte-1hq4pdk");
+    			add_location(div0, file$2, 189, 0, 4221);
+    			attr_dev(button2, "class", "uk-modal-close-default svelte-1hq4pdk");
     			attr_dev(button2, "type", "button");
     			attr_dev(button2, "uk-close", "");
-    			add_location(button2, file$2, 254, 4, 6179);
-    			attr_dev(h2, "class", "uk-modal-title svelte-1j2kq8d");
-    			add_location(h2, file$2, 256, 6, 6284);
+    			add_location(button2, file$2, 255, 4, 6157);
+    			attr_dev(h2, "class", "uk-modal-title svelte-1hq4pdk");
+    			add_location(h2, file$2, 257, 6, 6262);
     			attr_dev(div1, "class", "uk-modal-header");
-    			add_location(div1, file$2, 255, 4, 6248);
+    			add_location(div1, file$2, 256, 4, 6226);
     			attr_dev(span0, "for", "characterName");
-    			attr_dev(span0, "class", "svelte-1j2kq8d");
-    			add_location(span0, file$2, 261, 6, 6433);
+    			attr_dev(span0, "class", "svelte-1hq4pdk");
+    			add_location(span0, file$2, 262, 6, 6411);
     			attr_dev(input0, "uk-tooltip", "Enter Character Name");
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "name", "characterName");
-    			attr_dev(input0, "class", "svelte-1j2kq8d");
-    			add_location(input0, file$2, 262, 6, 6478);
+    			attr_dev(input0, "class", "svelte-1hq4pdk");
+    			add_location(input0, file$2, 263, 6, 6456);
     			attr_dev(span1, "for", "characterStatus");
-    			attr_dev(span1, "class", "svelte-1j2kq8d");
-    			add_location(span1, file$2, 267, 6, 6620);
+    			attr_dev(span1, "class", "svelte-1hq4pdk");
+    			add_location(span1, file$2, 268, 6, 6598);
     			attr_dev(input1, "uk-tooltip", "Dead, alive, or unknown");
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "name", "characterStatus");
-    			attr_dev(input1, "class", "svelte-1j2kq8d");
-    			add_location(input1, file$2, 268, 6, 6669);
+    			attr_dev(input1, "class", "svelte-1hq4pdk");
+    			add_location(input1, file$2, 269, 6, 6647);
     			attr_dev(span2, "for", "characterSpecies");
-    			attr_dev(span2, "class", "svelte-1j2kq8d");
-    			add_location(span2, file$2, 273, 6, 6818);
+    			attr_dev(span2, "class", "svelte-1hq4pdk");
+    			add_location(span2, file$2, 274, 6, 6796);
     			attr_dev(input2, "uk-tooltip", "Human, robot, unknown, etc.");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "name", "characterSpecies");
-    			attr_dev(input2, "class", "svelte-1j2kq8d");
-    			add_location(input2, file$2, 274, 6, 6869);
+    			attr_dev(input2, "class", "svelte-1hq4pdk");
+    			add_location(input2, file$2, 275, 6, 6847);
     			attr_dev(span3, "for", "characterGender");
-    			attr_dev(span3, "class", "svelte-1j2kq8d");
-    			add_location(span3, file$2, 279, 6, 7024);
+    			attr_dev(span3, "class", "svelte-1hq4pdk");
+    			add_location(span3, file$2, 280, 6, 7002);
     			attr_dev(input3, "uk-tooltip", "Male or Female");
     			attr_dev(input3, "type", "text");
     			attr_dev(input3, "name", "characterGender");
-    			attr_dev(input3, "class", "svelte-1j2kq8d");
-    			add_location(input3, file$2, 280, 6, 7073);
+    			attr_dev(input3, "class", "svelte-1hq4pdk");
+    			add_location(input3, file$2, 281, 6, 7051);
     			attr_dev(div2, "class", "uk-modal-body");
-    			add_location(div2, file$2, 260, 4, 6399);
-    			attr_dev(button3, "class", "uk-button uk-button-default uk-modal-close");
+    			add_location(div2, file$2, 261, 4, 6377);
+    			attr_dev(button3, "class", "uk-button uk-button-default uk-modal-close svelte-1hq4pdk");
     			attr_dev(button3, "type", "button");
-    			add_location(button3, file$2, 287, 6, 7272);
-    			attr_dev(button4, "class", "uk-button uk-button-default uk-modal-close");
+    			add_location(button3, file$2, 288, 6, 7250);
+    			attr_dev(button4, "class", "uk-button uk-button-default uk-modal-close svelte-1hq4pdk");
     			attr_dev(button4, "type", "button");
-    			add_location(button4, file$2, 290, 6, 7383);
+    			add_location(button4, file$2, 291, 6, 7361);
     			attr_dev(div3, "class", "uk-modal-footer uk-text-right");
-    			add_location(div3, file$2, 286, 4, 7222);
+    			add_location(div3, file$2, 287, 4, 7200);
     			attr_dev(div4, "class", "uk-modal-dialog");
-    			add_location(div4, file$2, 253, 2, 6145);
+    			add_location(div4, file$2, 254, 2, 6123);
     			attr_dev(div5, "id", "search-modal");
     			attr_dev(div5, "uk-modal", "");
-    			add_location(div5, file$2, 252, 0, 6110);
+    			add_location(div5, file$2, 253, 0, 6088);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
