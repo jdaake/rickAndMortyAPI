@@ -1527,7 +1527,7 @@ var app = (function () {
     			attr_dev(section0, "class", "uk-margin-bottom svelte-1ptj3lj");
     			add_location(section0, file$2, 297, 2, 7611);
     			attr_dev(i, "class", "fas fa-arrow-up");
-    			add_location(i, file$2, 323, 6, 8345);
+    			add_location(i, file$2, 323, 6, 8346);
     			attr_dev(button, "class", "uk-button uk-button-default uk-margin-bottom svelte-1ptj3lj");
     			attr_dev(button, "uk-tooltip", "Back to Top");
     			add_location(button, file$2, 317, 4, 8175);
@@ -1679,7 +1679,7 @@ var app = (function () {
     			section = element("section");
     			create_component(erroralert.$$.fragment);
     			attr_dev(section, "class", "svelte-1ptj3lj");
-    			add_location(section, file$2, 330, 2, 8441);
+    			add_location(section, file$2, 330, 2, 8442);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2258,7 +2258,7 @@ var app = (function () {
     	}
 
     	const click_handler_2 = () => {
-    		location.href = "#top";
+    		location.href = "#home";
     	};
 
     	$$self.$capture_state = () => ({

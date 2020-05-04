@@ -319,7 +319,7 @@
       class="uk-button uk-button-default uk-margin-bottom"
       uk-tooltip="Back to Top"
       on:click={() => {
-        location.href = '#top';
+        location.href = '#home';
       }}>
       <i class="fas fa-arrow-up" />
     </button>
