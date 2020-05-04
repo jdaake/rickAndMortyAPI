@@ -174,22 +174,27 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
+  @media (max-width: 592px) {
+    button {
+      margin-bottom: 0.8rem;
+    }
+  }
 </style>
 
 <div class="container">
-  <section class="uk-margin-bottom">
+  <section class="uk-margin-bottom ">
     <button
-      class="uk-button uk-button-default uk-margin-right"
+      class="uk-button uk-button-default uk-margin-right main-button"
       on:click={getCharacters}>
       Get All Characters
     </button>
-    <a
-      class="uk-button uk-button-default uk-margin-right"
+    <button
+      class="uk-button uk-button-default uk-margin-right main-button"
       href="#search-modal"
       uk-toggle
       on:click={() => (hasError = false)}>
       Search
-    </a>
+    </button>
   </section>
 </div>
 {#if hasCharacters}
