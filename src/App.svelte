@@ -190,10 +190,11 @@
       Get All Characters
     </button>
     <button
-      class="uk-button uk-button-default uk-margin-right main-button"
+      class="uk-button uk-button-default"
       href="#search-modal"
       uk-toggle
       on:click={() => (hasError = false)}>
+      <i class="fas fa-search" />
       Search
     </button>
   </section>
