@@ -143,6 +143,7 @@
     flex-flow: row wrap;
     align-content: flex-start;
     justify-content: center;
+    margin: auto;
   }
 
   input {
@@ -175,8 +176,6 @@
     }
   }
   @media (max-width: 592px) {
-    section {
-    }
     section > button {
       margin-bottom: 0.8rem;
     }
@@ -184,7 +183,7 @@
 </style>
 
 <div class="container">
-  <section class="uk-margin-bottom ">
+  <section class="uk-margin-bottom">
     <button
       class="uk-button uk-button-default uk-margin-right main-button"
       on:click={getCharacters}>
@@ -308,12 +307,22 @@
         <i class="fas fa-arrow-left" />
       </button>
       <button
-        class="uk-button uk-button-default uk-margin-right"
+        class="uk-button uk-button-default"
         on:click={getNextPage}
         disabled={nextIsDisabled}>
         <i class="fas fa-arrow-right" />
       </button>
     {/if}
+  </section>
+  <section>
+    <button
+      class="uk-button uk-button-default uk-margin-bottom"
+      uk-tooltip="Back to Top"
+      on:click={() => {
+        location.href = '#top';
+      }}>
+      <i class="fas fa-arrow-up" />
+    </button>
   </section>
 {/if}
 
