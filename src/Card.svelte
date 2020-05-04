@@ -1,7 +1,7 @@
 <script>
-  import { createEventDispatcher } from "svelte";
+  // import { createEventDispatcher } from "svelte";
   import { fade, fly } from "svelte/transition";
-  const dispatch = createEventDispatcher();
+  // const dispatch = createEventDispatcher();
   export let name;
   export let status;
   export let imgUrl;
@@ -55,7 +55,7 @@
 <div class="container">
   <header class="image uk-inline" uk-lightbox="transition: fade">
     <a href={linkImage}>
-      <img on:click={() => dispatch('click')} src={imgUrl} alt={name} />
+      <img src={imgUrl} alt={name} />
       <div class="uk-overlay uk-overlay-primary uk-position-bottom">
         <h3>{name}</h3>
       </div>

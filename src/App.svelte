@@ -1,8 +1,7 @@
 <script>
-  import Card from "./card.svelte";
+  import Card from "./Card.svelte";
   import ErrorAlert from "./ErrorAlert.svelte";
   import { fade } from "svelte/transition";
-  import { albums } from "./shared/albums";
   let hasCharacters = false;
   let characters = [];
   let nextPage;
