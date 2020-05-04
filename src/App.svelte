@@ -175,7 +175,7 @@
     }
   }
   @media (max-width: 592px) {
-    button {
+    section > button {
       margin-bottom: 0.8rem;
     }
   }
