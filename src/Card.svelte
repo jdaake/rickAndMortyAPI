@@ -29,7 +29,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 2rem;
-    min-width: 300px;
+    min-width: 275px;
   }
 
   .image {

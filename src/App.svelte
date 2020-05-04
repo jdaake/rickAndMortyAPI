@@ -175,6 +175,8 @@
     }
   }
   @media (max-width: 592px) {
+    section {
+    }
     section > button {
       margin-bottom: 0.8rem;
     }
@@ -204,13 +206,13 @@
         class="uk-button uk-button-default uk-margin-right"
         on:click={getPreviousPage}
         disabled={prevIsDisabled}>
-        Previous Page
+        <i class="fas fa-arrow-left" />
       </button>
       <button
         class="uk-button uk-button-default uk-margin-right"
         on:click={getNextPage}
         disabled={nextIsDisabled}>
-        Next Page
+        <i class="fas fa-arrow-right" />
       </button>
     {/if}
     <button
@@ -303,13 +305,13 @@
         class="uk-button uk-button-default uk-margin-right"
         on:click={getPreviousPage}
         disabled={prevIsDisabled}>
-        Previous Page
+        <i class="fas fa-arrow-left" />
       </button>
       <button
         class="uk-button uk-button-default uk-margin-right"
         on:click={getNextPage}
         disabled={nextIsDisabled}>
-        Next Page
+        <i class="fas fa-arrow-right" />
       </button>
     {/if}
   </section>
