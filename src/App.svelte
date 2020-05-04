@@ -27,6 +27,19 @@
     }
   }
 
+  function resetCharacters() {
+    characters = [];
+    hasCharacters = false;
+    hasError = false;
+  }
+
+  function resetModal() {
+    characterName = "";
+    characterStatus = "";
+    characterSpecies = "";
+    characterGender = "";
+  }
+
   async function getCharacters() {
     hasError = false;
     await fetch(`https://rickandmortyapi.com/api/character/`)
@@ -43,12 +56,6 @@
         console.log(err);
       });
     checkPages();
-  }
-
-  function resetCharacters() {
-    characters = [];
-    hasCharacters = false;
-    hasError = false;
   }
 
   async function getNextPage() {
@@ -113,11 +120,7 @@
         console.log(err);
       });
     checkPages();
-    // clear modal values
-    characterName = "";
-    characterStatus = "";
-    characterSpecies = "";
-    characterGender = "";
+    resetModal();
   }
 </script>
 
@@ -290,7 +293,10 @@
         name="characterGender" />
     </div>
     <div class="uk-modal-footer uk-text-right">
-      <button class="uk-button uk-button-default uk-modal-close" type="button">
+      <button
+        class="uk-button uk-button-default uk-modal-close"
+        type="button"
+        on:click={resetModal}>
         Cancel
       </button>
       <button
