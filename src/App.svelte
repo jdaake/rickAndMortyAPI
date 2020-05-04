@@ -11,8 +11,21 @@
   let characterSpecies;
   let characterGender;
   let hasError = false;
-  let enableFade = false;
-  let isDisabled = "disabled";
+  let prevIsDisabled;
+  let nextIsDisabled;
+
+  function checkPages() {
+    if (!nextPage || nextPage == "") {
+      nextIsDisabled = true;
+    } else {
+      nextIsDisabled = false;
+    }
+    if (!previousPage || previousPage == "") {
+      prevIsDisabled = true;
+    } else {
+      prevIsDisabled = false;
+    }
+  }
 
   async function getCharacters() {
     hasError = false;
@@ -25,8 +38,8 @@
         hasCharacters = true;
         nextPage = data.info.next ? data.info.next : "";
         previousPage = data.info.prev ? data.info.prev : "";
-        enableFade = true;
       });
+    checkPages();
   }
 
   function resetCharacters() {
@@ -45,8 +58,8 @@
         nextPage = data.info.next ? data.info.next : "";
         previousPage = data.info.prev ? data.info.prev : "";
         hasCharacters = true;
-        enableFade = true;
       });
+    checkPages();
   }
 
   async function getPreviousPage() {
@@ -59,8 +72,8 @@
         nextPage = data.info.next ? data.info.next : "";
         previousPage = data.info.prev ? data.info.prev : "";
         hasCharacters = true;
-        enableFade = true;
       });
+    checkPages();
   }
 
   async function searchCharacters(name, status, species, gender) {
@@ -94,6 +107,7 @@
       .catch(err => {
         console.log(err);
       });
+    checkPages();
   }
 </script>
 
@@ -169,34 +183,18 @@
 {#if hasCharacters}
   <section in:fade={{ delay: 1000 }} out:fade={{ delay: 0 }}>
     {#if previousPage != '' || nextPage != ''}
-      {#if previousPage == ''}
-        <button
-          class="uk-button uk-button-default uk-margin-right"
-          on:click={getPreviousPage}
-          disabled>
-          Previous Page
-        </button>
-      {:else}
-        <button
-          class="uk-button uk-button-default uk-margin-right"
-          on:click={getPreviousPage}>
-          Previous Page
-        </button>
-      {/if}
-      {#if nextPage == ''}
-        <button
-          class="uk-button uk-button-default uk-margin-right"
-          on:click={getNextPage}
-          disabled>
-          Next Page
-        </button>
-      {:else}
-        <button
-          class="uk-button uk-button-default uk-margin-right"
-          on:click={getNextPage}>
-          Next Page
-        </button>
-      {/if}
+      <button
+        class="uk-button uk-button-default uk-margin-right"
+        on:click={getPreviousPage}
+        disabled={prevIsDisabled}>
+        Previous Page
+      </button>
+      <button
+        class="uk-button uk-button-default uk-margin-right"
+        on:click={getNextPage}
+        disabled={nextIsDisabled}>
+        Next Page
+      </button>
     {/if}
     <button
       in:fade={{ delay: 1000 }}
@@ -284,34 +282,18 @@
     out:fade={{ delay: 0 }}
     class="uk-margin-bottom">
     {#if previousPage != '' || nextPage != ''}
-      {#if previousPage == ''}
-        <button
-          class="uk-button uk-button-default uk-margin-right"
-          on:click={getPreviousPage}
-          disabled>
-          Previous Page
-        </button>
-      {:else}
-        <button
-          class="uk-button uk-button-default uk-margin-right"
-          on:click={getPreviousPage}>
-          Previous Page
-        </button>
-      {/if}
-      {#if nextPage == ''}
-        <button
-          class="uk-button uk-button-default uk-margin-right"
-          on:click={getNextPage}
-          disabled>
-          Next Page
-        </button>
-      {:else}
-        <button
-          class="uk-button uk-button-default uk-margin-right"
-          on:click={getNextPage}>
-          Next Page
-        </button>
-      {/if}
+      <button
+        class="uk-button uk-button-default uk-margin-right"
+        on:click={getPreviousPage}
+        disabled={prevIsDisabled}>
+        Previous Page
+      </button>
+      <button
+        class="uk-button uk-button-default uk-margin-right"
+        on:click={getNextPage}
+        disabled={nextIsDisabled}>
+        Next Page
+      </button>
     {/if}
   </section>
 {/if}
