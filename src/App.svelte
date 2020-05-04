@@ -260,7 +260,11 @@
 <!-- Need to move to own component and figure out how to pass values to app.svelte -->
 <div id="search-modal" uk-modal>
   <div class="uk-modal-dialog">
-    <button class="uk-modal-close-default" type="button" uk-close />
+    <button
+      class="uk-modal-close-default"
+      type="button"
+      uk-close
+      on:click={resetModal} />
     <div class="uk-modal-header">
       <h2 class="uk-modal-title">
         Search for your favorite Rick and Morty Characters!
