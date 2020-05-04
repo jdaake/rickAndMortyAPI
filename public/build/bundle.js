@@ -991,7 +991,7 @@ var app = (function () {
 
     function create_fragment$1(ctx) {
     	let div;
-    	let a;
+    	let span;
     	let t0;
     	let h3;
     	let t2;
@@ -1004,35 +1004,35 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div = element("div");
-    			a = element("a");
+    			span = element("span");
     			t0 = space();
     			h3 = element("h3");
     			h3.textContent = "No Characters Found!";
     			t2 = space();
     			p = element("p");
     			p.textContent = "There were no characters matching your criteria. Please try again.";
-    			attr_dev(a, "class", "uk-alert-close");
-    			attr_dev(a, "uk-close", "");
-    			add_location(a, file$1, 14, 2, 241);
+    			attr_dev(span, "class", "uk-alert-close");
+    			attr_dev(span, "uk-close", "");
+    			add_location(span, file$1, 15, 2, 264);
     			attr_dev(h3, "class", "svelte-2w6h2m");
-    			add_location(h3, file$1, 15, 2, 317);
-    			add_location(p, file$1, 16, 2, 349);
+    			add_location(h3, file$1, 16, 2, 343);
+    			add_location(p, file$1, 17, 2, 375);
     			attr_dev(div, "uk-alert", "");
-    			add_location(div, file$1, 10, 0, 139);
+    			add_location(div, file$1, 11, 0, 162);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, div, anchor);
-    			append_dev(div, a);
+    			append_dev(div, span);
     			append_dev(div, t0);
     			append_dev(div, h3);
     			append_dev(div, t2);
     			append_dev(div, p);
     			current = true;
     			if (remount) dispose();
-    			dispose = listen_dev(a, "click", /*click_handler*/ ctx[0], false, false, false);
+    			dispose = listen_dev(span, "click", /*click_handler*/ ctx[1], false, false, false);
     		},
     		p: noop,
     		i: function intro(local) {
@@ -1070,7 +1070,8 @@ var app = (function () {
     }
 
     function instance$1($$self, $$props, $$invalidate) {
-    	const writable_props = [];
+    	let { hasError } = $$props;
+    	const writable_props = ["hasError"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<ErrorAlert> was created with unknown prop '${key}'`);
@@ -1078,15 +1079,29 @@ var app = (function () {
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("ErrorAlert", $$slots, []);
-    	const click_handler = () => hasError = false;
-    	$$self.$capture_state = () => ({ fade });
-    	return [click_handler];
+    	const click_handler = () => $$invalidate(0, hasError = false);
+
+    	$$self.$set = $$props => {
+    		if ("hasError" in $$props) $$invalidate(0, hasError = $$props.hasError);
+    	};
+
+    	$$self.$capture_state = () => ({ fade, hasError });
+
+    	$$self.$inject_state = $$props => {
+    		if ("hasError" in $$props) $$invalidate(0, hasError = $$props.hasError);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [hasError, click_handler];
     }
 
     class ErrorAlert extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, {});
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { hasError: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1094,6 +1109,21 @@ var app = (function () {
     			options,
     			id: create_fragment$1.name
     		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*hasError*/ ctx[0] === undefined && !("hasError" in props)) {
+    			console.warn("<ErrorAlert> was created without expected prop 'hasError'");
+    		}
+    	}
+
+    	get hasError() {
+    		throw new Error("<ErrorAlert>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set hasError(value) {
+    		throw new Error("<ErrorAlert>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -1617,7 +1647,11 @@ var app = (function () {
     function create_if_block(ctx) {
     	let section;
     	let current;
-    	const erroralert = new ErrorAlert({ $$inline: true });
+
+    	const erroralert = new ErrorAlert({
+    			props: { hasError: /*hasError*/ ctx[8] },
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
@@ -1630,6 +1664,11 @@ var app = (function () {
     			insert_dev(target, section, anchor);
     			mount_component(erroralert, section, null);
     			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const erroralert_changes = {};
+    			if (dirty & /*hasError*/ 256) erroralert_changes.hasError = /*hasError*/ ctx[8];
+    			erroralert.$set(erroralert_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -1956,6 +1995,8 @@ var app = (function () {
 
     			if (/*hasError*/ ctx[8]) {
     				if (if_block1) {
+    					if_block1.p(ctx, dirty);
+
     					if (dirty & /*hasError*/ 256) {
     						transition_in(if_block1, 1);
     					}

@@ -280,6 +280,6 @@
 <!-- Error -->
 {#if hasError}
   <section>
-    <ErrorAlert />
+    <ErrorAlert {hasError} />
   </section>
 {/if}
