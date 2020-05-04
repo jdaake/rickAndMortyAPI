@@ -220,7 +220,7 @@
     {/each}
   </section>
 {:else if hasCharacters || !hasError}
-  <section out:fade>
+  <section in:fade={{ delay: 500 }} out:fade>
     <h3>
       Get all Characters or Search for specific characters to get started.
     </h3>
@@ -276,6 +276,45 @@
     </div>
   </div>
 </div>
+
+<!-- Bottom page nav -->
+{#if hasCharacters}
+  <section
+    in:fade={{ delay: 1000 }}
+    out:fade={{ delay: 0 }}
+    class="uk-margin-bottom">
+    {#if previousPage != '' || nextPage != ''}
+      {#if previousPage == ''}
+        <button
+          class="uk-button uk-button-default uk-margin-right"
+          on:click={getPreviousPage}
+          disabled>
+          Previous Page
+        </button>
+      {:else}
+        <button
+          class="uk-button uk-button-default uk-margin-right"
+          on:click={getPreviousPage}>
+          Previous Page
+        </button>
+      {/if}
+      {#if nextPage == ''}
+        <button
+          class="uk-button uk-button-default uk-margin-right"
+          on:click={getNextPage}
+          disabled>
+          Next Page
+        </button>
+      {:else}
+        <button
+          class="uk-button uk-button-default uk-margin-right"
+          on:click={getNextPage}>
+          Next Page
+        </button>
+      {/if}
+    {/if}
+  </section>
+{/if}
 
 <!-- Error -->
 {#if hasError}
