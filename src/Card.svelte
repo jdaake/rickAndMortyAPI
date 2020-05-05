@@ -51,6 +51,9 @@
     padding: 0.5rem;
     text-align: left;
   }
+  div > h3:hover {
+    color: rgba(141, 225, 86, 1);
+  }
 </style>
 
 <div class="container">

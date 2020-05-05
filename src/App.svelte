@@ -148,6 +148,10 @@
     justify-content: center;
     margin: auto;
   }
+  section > img {
+    min-width: 275px;
+    width: 600px;
+  }
 
   input {
     display: block;
@@ -163,7 +167,7 @@
   }
 
   input:focus {
-    border-color: #e40763;
+    border-color: rgba(141, 225, 86, 1);
     outline: none;
   }
 
@@ -181,7 +185,8 @@
     margin: 0.5rem;
   }
   button:hover:enabled {
-    color: #e40763;
+    color: rgba(141, 225, 86, 1);
+    background-color: #333333;
   }
 
   @media (min-width: 768px) {
@@ -253,6 +258,11 @@
     <h3>
       Get all Characters or Search for specific characters to get started.
     </h3>
+  </section>
+  <section in:fade={{ delay: 500 }} out:fade>
+    <img
+      src="https://media.giphy.com/media/3o7aD2d7hy9ktXNDP2/source.gif"
+      alt="portal" />
   </section>
 {/if}
 
