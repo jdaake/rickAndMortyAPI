@@ -256,7 +256,7 @@
 {:else if hasCharacters || !hasError}
   <section in:fade={{ delay: 500 }} out:fade>
     <h3>
-      Get all Characters or Search for specific characters to get started.
+      Search for your favorite Rick and Morty characters or Get All to browse.
     </h3>
   </section>
   <section in:fade={{ delay: 500 }} out:fade>

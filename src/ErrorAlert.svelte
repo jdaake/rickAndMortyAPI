@@ -4,12 +4,14 @@
 </script>
 
 <style>
-  h3 {
+  h2 {
     font-family: "Permanent Marker", cursive;
     text-align: center;
   }
   p {
     text-align: center;
+    font-family: monospace;
+    font-size: 1.2rem;
   }
   img {
     min-width: 300px;
@@ -29,7 +31,7 @@
   in:fade={{ duration: 1500, delay: 1000 }}
   out:fade={{ duration: 0, delay: 0 }}>
   <span class="uk-alert-close" uk-close on:click={() => (hasError = false)} />
-  <h3>No Characters Found!</h3>
+  <h2>No Characters Found!</h2>
   <p>There were no characters matching your criteria. Please try again.</p>
   <section>
     <img
