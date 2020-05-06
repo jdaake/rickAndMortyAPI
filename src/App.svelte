@@ -252,15 +252,7 @@
     background-color: #333333;
   }
 
-  /* @media (min-width: 768px) {
-    section {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  } */
   @media (max-width: 592px) {
-    /* section > button {
-      margin-bottom: 0.8rem;
-    } */
     section.bottom-nav {
       display: flex;
       flex-flow: row;
