@@ -5,6 +5,7 @@
 <style>
   .banner {
     width: 100%;
+    background-color: black;
   }
 </style>
 
