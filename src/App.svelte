@@ -20,7 +20,7 @@
   let originalBgColor = "background-color:black;";
   let invertBgColor = "background-color:white;";
   let originalSrc = "assets/banner.png";
-  let invertSrc = "assets/invertBanner.png";
+  let invertSrc = "assets/invertRotateBanner.png";
   let autofocus;
 
   function checkPages() {
@@ -272,7 +272,18 @@
   }
 </style>
 
-<Banner {src} {bgColor} />
+<Banner
+  {src}
+  {bgColor}
+  on:mouseenter={() => {
+    bgColor = invertBgColor;
+    src = invertSrc;
+  }}
+  on:mouseleave={() => {
+    bgColor = originalBgColor;
+    src = originalSrc;
+  }} />
+
 <div class="container" transition:fade={{ duration: 700, delay: 500 }}>
   <section class="uk-margin-bottom" id="home">
     <button

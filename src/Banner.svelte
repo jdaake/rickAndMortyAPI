@@ -11,6 +11,10 @@
   }
 </style>
 
-<div class="banner" transition:fade={{ duration: 700, delay: 500 }}>
+<div
+  on:mouseenter
+  on:mouseleave
+  class="banner"
+  transition:fade={{ duration: 700, delay: 500 }}>
   <img {src} style={bgColor} alt="Rick and Morty" />
 </div>
