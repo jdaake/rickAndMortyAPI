@@ -1,5 +1,7 @@
 <script>
   import Card from "./Card.svelte";
+  import Footer from "./Footer.svelte";
+  import Banner from "./Banner.svelte";
   import ErrorAlert from "./ErrorAlert.svelte";
   import { fade } from "svelte/transition";
   let hasCharacters = false;
@@ -68,6 +70,7 @@
         nextPage = data.info.next ? data.info.next : "";
         previousPage = data.info.prev ? data.info.prev : "";
         hasCharacters = true;
+        location.href = "#home";
       })
       .catch(err => {
         console.log(err);
@@ -85,6 +88,7 @@
         nextPage = data.info.next ? data.info.next : "";
         previousPage = data.info.prev ? data.info.prev : "";
         hasCharacters = true;
+        location.hash = "#home";
       })
       .catch(err => {
         console.log(err);
@@ -148,9 +152,16 @@
     justify-content: center;
     margin: auto;
   }
-  section > img {
+  /* section > img {
     min-width: 275px;
     width: 600px;
+  } */
+
+  section.margin-top {
+    margin-top: -1rem;
+  }
+  section.margin-bottom {
+    margin-bottom: -0.5rem;
   }
 
   input {
@@ -178,9 +189,6 @@
     font-family: monospace;
   }
 
-  button.toTop {
-    margin-top: -1rem;
-  }
   button {
     margin: 0.5rem;
   }
@@ -189,25 +197,34 @@
     background-color: #333333;
   }
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     section {
       grid-template-columns: repeat(2, 1fr);
     }
-  }
+  } */
   @media (max-width: 592px) {
-    section > button {
+    /* section > button {
       margin-bottom: 0.8rem;
+    } */
+    section.bottom-nav {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      margin: auto;
+      width: 95vw;
+      margin-bottom: 1rem;
     }
   }
 </style>
 
+<Banner />
 <div class="container">
   <section class="uk-margin-bottom">
     <button class="uk-button uk-button-default " on:click={getCharacters}>
       Get All Characters
     </button>
     <button
-      class="uk-button uk-button-default"
+      class="uk-button uk-button-default margin-bottom"
       href="#search-modal"
       uk-toggle
       on:click={() => (hasError = false)}>
@@ -216,7 +233,9 @@
     </button>
   </section>
 </div>
+
 {#if hasCharacters}
+  <hr in:fade={{ delay: 1000 }} out:fade={{ delay: 0 }} />
   <section in:fade={{ delay: 1000 }} out:fade={{ delay: 0 }}>
     {#if previousPage != '' || nextPage != ''}
       <button
@@ -240,7 +259,7 @@
       Clear All Characters
     </button>
   </section>
-  <section in:fade={{ delay: 1000 }} out:fade={{ delay: 0 }}>
+  <section class="margin-top" in:fade={{ delay: 1000 }} out:fade={{ delay: 0 }}>
     {#each characters as character}
       <Card
         on:click
@@ -250,20 +269,44 @@
         gender={character.gender}
         origin={character.origin.name}
         imgUrl={character.image}
-        linkImage={character.image} />
+        linkImage={character.image}
+        statusClass={character.status == 'Dead' ? 'fas fa-skull-crossbones' : ''} />
     {/each}
   </section>
+  <section
+    in:fade={{ delay: 1000 }}
+    out:fade={{ delay: 0 }}
+    class="uk-margin-bottom bottom-nav">
+    {#if previousPage != '' || nextPage != ''}
+      <button
+        class="uk-button uk-button-default"
+        on:click={getPreviousPage}
+        disabled={prevIsDisabled}>
+        <i class="fas fa-arrow-left" />
+      </button>
+      <button
+        class="uk-button uk-button-default"
+        on:click={getNextPage}
+        disabled={nextIsDisabled}>
+        <i class="fas fa-arrow-right" />
+      </button>
+    {/if}
+  </section>
+  <Footer positionClass={'relative'} />
 {:else if hasCharacters || !hasError}
-  <section in:fade={{ delay: 500 }} out:fade>
+  <section in:fade={{ delay: 1000 }} out:fade>
     <h3>
       Search for your favorite Rick and Morty characters or Get All to browse.
     </h3>
   </section>
-  <section in:fade={{ delay: 500 }} out:fade>
+  <section>
+    <Footer positionClass={'absolute'} />
+  </section>
+  <!-- <section in:fade={{ delay: 500 }} out:fade>
     <img
       src="https://media.giphy.com/media/3o7aD2d7hy9ktXNDP2/source.gif"
       alt="portal" />
-  </section>
+  </section> -->
 {/if}
 
 <!-- Search Modal -->
@@ -322,39 +365,6 @@
     </div>
   </div>
 </div>
-
-<!-- Bottom page nav -->
-{#if hasCharacters}
-  <section
-    in:fade={{ delay: 1000 }}
-    out:fade={{ delay: 0 }}
-    class="uk-margin-bottom">
-    {#if previousPage != '' || nextPage != ''}
-      <button
-        class="uk-button uk-button-default"
-        on:click={getPreviousPage}
-        disabled={prevIsDisabled}>
-        <i class="fas fa-arrow-left" />
-      </button>
-      <button
-        class="uk-button uk-button-default"
-        on:click={getNextPage}
-        disabled={nextIsDisabled}>
-        <i class="fas fa-arrow-right" />
-      </button>
-    {/if}
-  </section>
-  <section>
-    <button
-      class="uk-button uk-button-default toTop"
-      uk-tooltip="Back to Top"
-      on:click={() => {
-        location.href = '#home';
-      }}>
-      <i class="fas fa-arrow-up" />
-    </button>
-  </section>
-{/if}
 
 <!-- Error -->
 {#if hasError}

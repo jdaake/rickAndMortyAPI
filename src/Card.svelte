@@ -9,6 +9,7 @@
   export let species;
   export let origin;
   export let gender;
+  export let statusClass;
 </script>
 
 <style>
@@ -61,7 +62,10 @@
     <a href={linkImage}>
       <img src={imgUrl} alt={name} />
       <div class="uk-overlay uk-overlay-primary uk-position-bottom">
-        <h3>{name}</h3>
+        <h3>
+          <i class={statusClass} />
+          {name}
+        </h3>
       </div>
     </a>
   </header>
