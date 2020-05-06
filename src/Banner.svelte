@@ -12,8 +12,6 @@
   .banner {
     width: 100vw;
     margin: auto;
-    display: flex;
-    flex-flow: row wrap;
     justify-content: center;
     align-content: center;
     /* background-color: black; */
