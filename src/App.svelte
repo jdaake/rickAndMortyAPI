@@ -15,6 +15,13 @@
   let hasError = false;
   let prevIsDisabled;
   let nextIsDisabled;
+  let src;
+  let bgColor;
+  let originalBgColor = "background-color:black;";
+  let invertBgColor = "background-color:white;";
+  let originalSrc = "assets/banner.png";
+  let invertSrc = "assets/invertBanner.png";
+  let autofocus;
 
   function checkPages() {
     if (!nextPage || nextPage == "") {
@@ -40,6 +47,58 @@
     characterStatus = "";
     characterSpecies = "";
     characterGender = "";
+    autofocus = "";
+  }
+
+  function twitch() {
+    setTimeout(() => {
+      src = invertSrc;
+      bgColor = invertBgColor;
+    }, 100);
+    setTimeout(() => {
+      src = originalSrc;
+      bgColor = originalBgColor;
+    }, 200);
+    setTimeout(() => {
+      src = invertSrc;
+      bgColor = invertBgColor;
+    }, 300);
+    setTimeout(() => {
+      src = originalSrc;
+      bgColor = originalBgColor;
+    }, 400);
+    setTimeout(() => {
+      src = invertSrc;
+      bgColor = invertBgColor;
+    }, 500);
+    setTimeout(() => {
+      src = originalSrc;
+      bgColor = originalBgColor;
+    }, 600);
+    setTimeout(() => {
+      src = invertSrc;
+      bgColor = invertBgColor;
+    }, 700);
+    setTimeout(() => {
+      src = originalSrc;
+      bgColor = originalBgColor;
+    }, 800);
+    setTimeout(() => {
+      src = invertSrc;
+      bgColor = invertBgColor;
+    }, 900);
+    setTimeout(() => {
+      src = originalSrc;
+      bgColor = originalBgColor;
+    }, 1000);
+    setTimeout(() => {
+      src = invertSrc;
+      bgColor = invertBgColor;
+    }, 1100);
+    setTimeout(() => {
+      src = originalSrc;
+      bgColor = originalBgColor;
+    }, 1200);
   }
 
   async function getCharacters() {
@@ -117,6 +176,7 @@
         nextPage = data.info.next;
         previousPage = data.info.prev;
         hasCharacters = true;
+        twitch();
       })
       .catch(err => {
         console.log(err);
@@ -143,13 +203,6 @@
     width: 85%;
   }
 
-  section.tag-line {
-    display: flex;
-    flex-flow: row wrap;
-    align-content: center;
-    justify-content: center;
-    margin: auto;
-  }
   section {
     display: flex;
     flex-flow: row wrap;
@@ -219,17 +272,21 @@
   }
 </style>
 
-<Banner />
+<Banner {src} {bgColor} />
 <div class="container" transition:fade={{ duration: 700, delay: 500 }}>
   <section class="uk-margin-bottom" id="home">
-    <button class="uk-button uk-button-default " on:click={getCharacters}>
+    <button
+      class="uk-button uk-button-default "
+      on:click={getCharacters}
+      on:click={twitch}>
       Get All Characters
     </button>
     <button
       class="uk-button uk-button-default margin-bottom"
       href="#search-modal"
       uk-toggle
-      on:click={() => (hasError = false)}>
+      on:click={() => (hasError = false)}
+      on:click={() => (autofocus = 'autofocus')}>
       <i class="fas fa-search" />
       Search
     </button>
@@ -261,7 +318,8 @@
       in:fade={{ delay: 700 }}
       out:fade={{ delay: 0 }}
       class="uk-button uk-button-default"
-      on:click={resetCharacters}>
+      on:click={resetCharacters}
+      on:click={twitch}>
       Clear All Characters
     </button>
   </section>
@@ -336,7 +394,7 @@
     <div class="uk-modal-body">
       <span for="characterName">Name:</span>
       <input
-        autofocus
+        {autofocus}
         bind:value={characterName}
         type="text"
         name="characterName" />
@@ -367,6 +425,9 @@
         Cancel
       </button>
       <button
+        on:click={() => {
+          autofocus = '';
+        }}
         on:click={searchCharacters(characterName, characterStatus, characterSpecies, characterGender)}
         class="uk-button uk-button-default uk-modal-close"
         type="button">
