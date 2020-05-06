@@ -14,6 +14,8 @@
     margin: auto;
     display: flex;
     flex-flow: column;
+    justify-content: center;
+    align-content: center;
     /* background-color: black; */
   }
 </style>
