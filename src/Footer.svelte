@@ -14,6 +14,7 @@
     position: absolute;
     bottom: 0;
     right: 2%;
+    align-items: baseline;
   }
   section.relative {
     display: flex;
@@ -24,8 +25,10 @@
     margin-bottom: 1rem;
     position: relative;
     bottom: 0;
-    right: 5%;
+    right: 3%;
+    align-items: baseline;
   }
+
   i {
     color: black;
     font-size: 2rem;
@@ -33,20 +36,6 @@
     text-align: center;
     padding: 0.5rem;
   }
-
-  /* @media (max-width: 592px) {
-    section.absolute,
-    section.relative {
-      display: flex;
-      /* justify-content: center; */
-  /* margin: auto;
-      width: 100vw;
-      margin-bottom: 1rem;
-    }
-    i {
-      padding: 0.5rem;
-    }
-  }  */
 </style>
 
 <section

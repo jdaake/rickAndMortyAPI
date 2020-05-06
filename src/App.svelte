@@ -88,7 +88,7 @@
         nextPage = data.info.next ? data.info.next : "";
         previousPage = data.info.prev ? data.info.prev : "";
         hasCharacters = true;
-        location.hash = "#home";
+        location.href = "#home";
       })
       .catch(err => {
         console.log(err);
@@ -160,9 +160,6 @@
   section.margin-top {
     margin-top: -1rem;
   }
-  section.margin-bottom {
-    margin-bottom: -0.5rem;
-  }
 
   input {
     display: block;
@@ -219,7 +216,7 @@
 
 <Banner />
 <div class="container">
-  <section class="uk-margin-bottom">
+  <section class="uk-margin-bottom" id="home">
     <button class="uk-button uk-button-default " on:click={getCharacters}>
       Get All Characters
     </button>
@@ -326,8 +323,8 @@
     <div class="uk-modal-body">
       <span for="characterName">Name:</span>
       <input
+        autofocus
         bind:value={characterName}
-        uk-tooltip="Enter Character Name"
         type="text"
         name="characterName" />
       <span for="characterStatus">Status:</span>
@@ -339,7 +336,7 @@
       <span for="characterSpecies">Species:</span>
       <input
         bind:value={characterSpecies}
-        uk-tooltip="Human, robot, unknown, etc."
+        uk-tooltip="Human, humanoid, robot, unknown, etc."
         type="text"
         name="characterSpecies" />
       <span for="characterGender">Gender:</span>
