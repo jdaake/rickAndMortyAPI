@@ -70,7 +70,6 @@
         nextPage = data.info.next ? data.info.next : "";
         previousPage = data.info.prev ? data.info.prev : "";
         hasCharacters = true;
-        location.href = "#home";
       })
       .catch(err => {
         console.log(err);
@@ -88,7 +87,6 @@
         nextPage = data.info.next ? data.info.next : "";
         previousPage = data.info.prev ? data.info.prev : "";
         hasCharacters = true;
-        location.href = "#home";
       })
       .catch(err => {
         console.log(err);
@@ -285,12 +283,14 @@
       <button
         class="uk-button uk-button-default"
         on:click={getPreviousPage}
+        on:click={() => (location.href = '#home')}
         disabled={prevIsDisabled}>
         <i class="fas fa-arrow-left" />
       </button>
       <button
         class="uk-button uk-button-default"
         on:click={getNextPage}
+        on:click={() => (location.href = '#home')}
         disabled={nextIsDisabled}>
         <i class="fas fa-arrow-right" />
       </button>
