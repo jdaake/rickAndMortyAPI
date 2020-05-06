@@ -9,19 +9,20 @@
 </script>
 
 <style>
-  /* .banner {
-    width: 100vw;
+  .banner {
+    width: 100%;
     margin: auto;
-    display: flex;
+    justify-content: center;
+    /* display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-content: center;
+    align-content: center; */
   }
   @media (max-width: 592px) {
-    .banner {
-      width: 100vw;
-    }
-  } */
+    /* .banner {
+      width: 100vw; */
+    /* } */
+  }
 </style>
 
 <div
