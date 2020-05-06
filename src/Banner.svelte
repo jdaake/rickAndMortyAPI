@@ -7,6 +7,7 @@
 <style>
   .banner {
     width: 100%;
+    margin: auto;
     /* background-color: black; */
   }
 </style>

@@ -1309,9 +1309,9 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*src*/ ctx[0])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "style", /*bgColor*/ ctx[1]);
     			attr_dev(img, "alt", "Rick and Morty");
-    			add_location(img, file$2, 18, 2, 347);
-    			attr_dev(div, "class", "banner svelte-auoaju");
-    			add_location(div, file$2, 13, 0, 240);
+    			add_location(img, file$2, 19, 2, 365);
+    			attr_dev(div, "class", "banner svelte-1umelek");
+    			add_location(div, file$2, 14, 0, 258);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
