@@ -20,7 +20,6 @@
   @media (max-width: 592px) {
     .banner {
       width: 100vw;
-      margin: auto;
     }
   }
 </style>
