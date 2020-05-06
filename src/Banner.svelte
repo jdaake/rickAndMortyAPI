@@ -13,7 +13,7 @@
     width: 100%;
     margin: auto;
     display: flex;
-    flex-flow: column;
+    flex-flow: row wrap;
     justify-content: center;
     align-content: center;
     /* background-color: black; */
