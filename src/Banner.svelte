@@ -12,6 +12,8 @@
   .banner {
     width: 100%;
     margin: auto;
+    display: flex;
+    flex-flow: column;
     /* background-color: black; */
   }
 </style>
