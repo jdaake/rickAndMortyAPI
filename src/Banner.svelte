@@ -27,7 +27,7 @@
   /* } */
 </style>
 
-<section>
+<section {bgColor}>
   <div
     on:mouseenter={() => {
       bgColor = invertBgColor;

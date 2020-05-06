@@ -1311,9 +1311,10 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*src*/ ctx[0])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "style", /*bgColor*/ ctx[1]);
     			attr_dev(img, "alt", "Rick and Morty");
-    			add_location(img, file$2, 41, 4, 970);
+    			add_location(img, file$2, 41, 4, 980);
     			attr_dev(div, "class", "banner");
-    			add_location(div, file$2, 30, 2, 709);
+    			add_location(div, file$2, 30, 2, 719);
+    			attr_dev(section, "bgcolor", /*bgColor*/ ctx[1]);
     			attr_dev(section, "class", "svelte-m6mb35");
     			add_location(section, file$2, 29, 0, 697);
     		},
@@ -1339,6 +1340,10 @@ var app = (function () {
 
     			if (!current || dirty & /*bgColor*/ 2) {
     				attr_dev(img, "style", /*bgColor*/ ctx[1]);
+    			}
+
+    			if (!current || dirty & /*bgColor*/ 2) {
+    				attr_dev(section, "bgcolor", /*bgColor*/ ctx[1]);
     			}
     		},
     		i: function intro(local) {
