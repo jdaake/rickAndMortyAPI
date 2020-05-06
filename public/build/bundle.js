@@ -1295,6 +1295,7 @@ var app = (function () {
     const file$2 = "src/Banner.svelte";
 
     function create_fragment$2(ctx) {
+    	let section;
     	let div;
     	let img;
     	let img_src_value;
@@ -1304,20 +1305,24 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			section = element("section");
     			div = element("div");
     			img = element("img");
     			if (img.src !== (img_src_value = /*src*/ ctx[0])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "style", /*bgColor*/ ctx[1]);
     			attr_dev(img, "alt", "Rick and Morty");
-    			add_location(img, file$2, 38, 2, 875);
-    			attr_dev(div, "class", "banner svelte-mvpout");
-    			add_location(div, file$2, 27, 0, 636);
+    			add_location(img, file$2, 41, 4, 970);
+    			attr_dev(div, "class", "banner");
+    			add_location(div, file$2, 30, 2, 709);
+    			attr_dev(section, "class", "svelte-m6mb35");
+    			add_location(section, file$2, 29, 0, 697);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor, remount) {
-    			insert_dev(target, div, anchor);
+    			insert_dev(target, section, anchor);
+    			append_dev(section, div);
     			append_dev(div, img);
     			current = true;
     			if (remount) run_all(dispose);
@@ -1352,7 +1357,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(section);
     			if (detaching && div_transition) div_transition.end();
     			run_all(dispose);
     		}

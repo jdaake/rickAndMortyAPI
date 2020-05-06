@@ -9,7 +9,14 @@
 </script>
 
 <style>
-  .banner {
+  section {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: center;
+    margin: auto;
+  }
+  /* .banner {
     width: 100%;
     margin: auto;
     justify-content: center;
@@ -17,24 +24,21 @@
     flex-flow: row wrap;
     justify-content: center;
     align-content: center; */
-  }
-  @media (max-width: 592px) {
-    /* .banner {
-      width: 100vw; */
-    /* } */
-  }
+  /* } */
 </style>
 
-<div
-  on:mouseenter={() => {
-    bgColor = invertBgColor;
-    src = invertSrc;
-  }}
-  on:mouseleave={() => {
-    bgColor = originalBgColor;
-    src = originalSrc;
-  }}
-  class="banner"
-  transition:fade={{ duration: 700, delay: 500 }}>
-  <img {src} style={bgColor} alt="Rick and Morty" />
-</div>
+<section>
+  <div
+    on:mouseenter={() => {
+      bgColor = invertBgColor;
+      src = invertSrc;
+    }}
+    on:mouseleave={() => {
+      bgColor = originalBgColor;
+      src = originalSrc;
+    }}
+    class="banner"
+    transition:fade={{ duration: 700, delay: 500 }}>
+    <img {src} style={bgColor} alt="Rick and Morty" />
+  </div>
+</section>
