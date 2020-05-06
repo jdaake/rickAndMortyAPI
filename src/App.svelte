@@ -300,21 +300,16 @@
 {:else if hasCharacters || !hasError}
   <section
     in:fade={{ duration: 700, delay: 500 }}
-    out:fade={{ duration: 0, delay: 0 }}>
-    <h3>
-      Search for your favorite Rick and Morty characters or Get All to browse.
-    </h3>
+    out:fade={{ duration: 700, delay: 0 }}>
+    <section>
+      <h3>
+        Search for your favorite Rick and Morty characters or Get All to browse.
+      </h3>
+    </section>
+    <section>
+      <Footer positionClass={'absolute'} />
+    </section>
   </section>
-  <section
-    in:fade={{ duration: 700, delay: 500 }}
-    out:fade={{ duration: 0, delay: 0 }}>
-    <Footer positionClass={'absolute'} />
-  </section>
-  <!-- <section in:fade={{ delay: 500 }} out:fade>
-    <img
-      src="https://media.giphy.com/media/3o7aD2d7hy9ktXNDP2/source.gif"
-      alt="portal" />
-  </section> -->
 {/if}
 
 <!-- Search Modal -->

@@ -1564,14 +1564,13 @@ var app = (function () {
 
     // (300:37) 
     function create_if_block_4(ctx) {
+    	let section2;
     	let section0;
     	let h3;
-    	let section0_intro;
-    	let section0_outro;
     	let t1;
     	let section1;
-    	let section1_intro;
-    	let section1_outro;
+    	let section2_intro;
+    	let section2_outro;
     	let current;
 
     	const footer = new Footer({
@@ -1581,6 +1580,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			section2 = element("section");
     			section0 = element("section");
     			h3 = element("h3");
     			h3.textContent = "Search for your favorite Rick and Morty characters or Get All to browse.";
@@ -1588,55 +1588,46 @@ var app = (function () {
     			section1 = element("section");
     			create_component(footer.$$.fragment);
     			attr_dev(h3, "class", "svelte-12j62z4");
-    			add_location(h3, file$4, 303, 4, 7426);
+    			add_location(h3, file$4, 304, 6, 7444);
     			attr_dev(section0, "class", "svelte-12j62z4");
-    			add_location(section0, file$4, 300, 2, 7327);
+    			add_location(section0, file$4, 303, 4, 7428);
     			attr_dev(section1, "class", "svelte-12j62z4");
-    			add_location(section1, file$4, 307, 2, 7535);
+    			add_location(section1, file$4, 308, 4, 7561);
+    			attr_dev(section2, "class", "svelte-12j62z4");
+    			add_location(section2, file$4, 300, 2, 7327);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, section0, anchor);
+    			insert_dev(target, section2, anchor);
+    			append_dev(section2, section0);
     			append_dev(section0, h3);
-    			insert_dev(target, t1, anchor);
-    			insert_dev(target, section1, anchor);
+    			append_dev(section2, t1);
+    			append_dev(section2, section1);
     			mount_component(footer, section1, null);
     			current = true;
     		},
     		p: noop,
     		i: function intro(local) {
     			if (current) return;
-
-    			add_render_callback(() => {
-    				if (section0_outro) section0_outro.end(1);
-    				if (!section0_intro) section0_intro = create_in_transition(section0, fade, { duration: 700, delay: 500 });
-    				section0_intro.start();
-    			});
-
     			transition_in(footer.$$.fragment, local);
 
     			add_render_callback(() => {
-    				if (section1_outro) section1_outro.end(1);
-    				if (!section1_intro) section1_intro = create_in_transition(section1, fade, { duration: 700, delay: 500 });
-    				section1_intro.start();
+    				if (section2_outro) section2_outro.end(1);
+    				if (!section2_intro) section2_intro = create_in_transition(section2, fade, { duration: 700, delay: 500 });
+    				section2_intro.start();
     			});
 
     			current = true;
     		},
     		o: function outro(local) {
-    			if (section0_intro) section0_intro.invalidate();
-    			section0_outro = create_out_transition(section0, fade, { duration: 0, delay: 0 });
     			transition_out(footer.$$.fragment, local);
-    			if (section1_intro) section1_intro.invalidate();
-    			section1_outro = create_out_transition(section1, fade, { duration: 0, delay: 0 });
+    			if (section2_intro) section2_intro.invalidate();
+    			section2_outro = create_out_transition(section2, fade, { duration: 700, delay: 0 });
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(section0);
-    			if (detaching && section0_outro) section0_outro.end();
-    			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(section1);
+    			if (detaching) detach_dev(section2);
     			destroy_component(footer);
-    			if (detaching && section1_outro) section1_outro.end();
+    			if (detaching && section2_outro) section2_outro.end();
     		}
     	};
 
@@ -2106,7 +2097,7 @@ var app = (function () {
     	return block;
     }
 
-    // (378:0) {#if hasError}
+    // (373:0) {#if hasError}
     function create_if_block(ctx) {
     	let section0;
     	let t;
@@ -2130,9 +2121,9 @@ var app = (function () {
     			section1 = element("section");
     			create_component(footer.$$.fragment);
     			attr_dev(section0, "class", "svelte-12j62z4");
-    			add_location(section0, file$4, 378, 2, 9603);
+    			add_location(section0, file$4, 373, 2, 9390);
     			attr_dev(section1, "class", "svelte-12j62z4");
-    			add_location(section1, file$4, 381, 2, 9683);
+    			add_location(section1, file$4, 376, 2, 9470);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section0, anchor);
@@ -2177,7 +2168,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(378:0) {#if hasError}",
+    		source: "(373:0) {#if hasError}",
     		ctx
     	});
 
@@ -2315,58 +2306,58 @@ var app = (function () {
     			attr_dev(button2, "class", "uk-modal-close-default svelte-12j62z4");
     			attr_dev(button2, "type", "button");
     			attr_dev(button2, "uk-close", "");
-    			add_location(button2, file$4, 323, 4, 8041);
+    			add_location(button2, file$4, 318, 4, 7828);
     			attr_dev(h2, "class", "uk-modal-title svelte-12j62z4");
-    			add_location(h2, file$4, 329, 6, 8192);
+    			add_location(h2, file$4, 324, 6, 7979);
     			attr_dev(div1, "class", "uk-modal-header");
-    			add_location(div1, file$4, 328, 4, 8156);
+    			add_location(div1, file$4, 323, 4, 7943);
     			attr_dev(span0, "for", "characterName");
     			attr_dev(span0, "class", "svelte-12j62z4");
-    			add_location(span0, file$4, 334, 6, 8341);
+    			add_location(span0, file$4, 329, 6, 8128);
     			input0.autofocus = true;
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "name", "characterName");
     			attr_dev(input0, "class", "svelte-12j62z4");
-    			add_location(input0, file$4, 335, 6, 8386);
+    			add_location(input0, file$4, 330, 6, 8173);
     			attr_dev(span1, "for", "characterStatus");
     			attr_dev(span1, "class", "svelte-12j62z4");
-    			add_location(span1, file$4, 340, 6, 8504);
+    			add_location(span1, file$4, 335, 6, 8291);
     			attr_dev(input1, "uk-tooltip", "Dead, alive, or unknown");
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "name", "characterStatus");
     			attr_dev(input1, "class", "svelte-12j62z4");
-    			add_location(input1, file$4, 341, 6, 8553);
+    			add_location(input1, file$4, 336, 6, 8340);
     			attr_dev(span2, "for", "characterSpecies");
     			attr_dev(span2, "class", "svelte-12j62z4");
-    			add_location(span2, file$4, 346, 6, 8702);
+    			add_location(span2, file$4, 341, 6, 8489);
     			attr_dev(input2, "uk-tooltip", "Human, humanoid, robot, unknown, etc.");
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "name", "characterSpecies");
     			attr_dev(input2, "class", "svelte-12j62z4");
-    			add_location(input2, file$4, 347, 6, 8753);
+    			add_location(input2, file$4, 342, 6, 8540);
     			attr_dev(span3, "for", "characterGender");
     			attr_dev(span3, "class", "svelte-12j62z4");
-    			add_location(span3, file$4, 352, 6, 8918);
+    			add_location(span3, file$4, 347, 6, 8705);
     			attr_dev(input3, "uk-tooltip", "Male or Female");
     			attr_dev(input3, "type", "text");
     			attr_dev(input3, "name", "characterGender");
     			attr_dev(input3, "class", "svelte-12j62z4");
-    			add_location(input3, file$4, 353, 6, 8967);
+    			add_location(input3, file$4, 348, 6, 8754);
     			attr_dev(div2, "class", "uk-modal-body");
-    			add_location(div2, file$4, 333, 4, 8307);
+    			add_location(div2, file$4, 328, 4, 8094);
     			attr_dev(button3, "class", "uk-button uk-button-default uk-modal-close svelte-12j62z4");
     			attr_dev(button3, "type", "button");
-    			add_location(button3, file$4, 360, 6, 9166);
+    			add_location(button3, file$4, 355, 6, 8953);
     			attr_dev(button4, "class", "uk-button uk-button-default uk-modal-close svelte-12j62z4");
     			attr_dev(button4, "type", "button");
-    			add_location(button4, file$4, 366, 6, 9323);
+    			add_location(button4, file$4, 361, 6, 9110);
     			attr_dev(div3, "class", "uk-modal-footer uk-text-right");
-    			add_location(div3, file$4, 359, 4, 9116);
+    			add_location(div3, file$4, 354, 4, 8903);
     			attr_dev(div4, "class", "uk-modal-dialog");
-    			add_location(div4, file$4, 322, 2, 8007);
+    			add_location(div4, file$4, 317, 2, 7794);
     			attr_dev(div5, "id", "search-modal");
     			attr_dev(div5, "uk-modal", "");
-    			add_location(div5, file$4, 321, 0, 7972);
+    			add_location(div5, file$4, 316, 0, 7759);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
