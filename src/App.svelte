@@ -272,17 +272,7 @@
   }
 </style>
 
-<Banner
-  {src}
-  {bgColor}
-  on:mouseenter={() => {
-    bgColor = invertBgColor;
-    src = invertSrc;
-  }}
-  on:mouseleave={() => {
-    bgColor = originalBgColor;
-    src = originalSrc;
-  }} />
+<Banner {src} {bgColor} />
 
 <div class="container" transition:fade={{ duration: 700, delay: 500 }}>
   <section class="uk-margin-bottom" id="home">
