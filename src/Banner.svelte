@@ -9,7 +9,7 @@
 </script>
 
 <style>
-  .banner {
+  /* .banner {
     width: 100vw;
     margin: auto;
     display: flex;
@@ -21,7 +21,7 @@
     .banner {
       width: 100vw;
     }
-  }
+  } */
 </style>
 
 <div
