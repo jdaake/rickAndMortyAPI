@@ -10,7 +10,7 @@
 
 <style>
   .banner {
-    width: 100%;
+    width: 100vw;
     margin: auto;
     display: flex;
     flex-flow: row wrap;
