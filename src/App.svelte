@@ -143,6 +143,13 @@
     width: 85%;
   }
 
+  section.tag-line {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+  }
   section {
     display: flex;
     flex-flow: row wrap;
@@ -301,14 +308,14 @@
   <section
     in:fade={{ duration: 700, delay: 500 }}
     out:fade={{ duration: 700, delay: 0 }}>
-    <section>
-      <h3>
-        Search for your favorite Rick and Morty characters or Get All to browse.
-      </h3>
-    </section>
-    <section>
-      <Footer positionClass={'absolute'} />
-    </section>
+    <h3>
+      Search for your favorite Rick and Morty characters or Get All to browse.
+    </h3>
+  </section>
+  <section
+    in:fade={{ duration: 700, delay: 500 }}
+    out:fade={{ duration: 700, delay: 0 }}>
+    <Footer positionClass={'absolute'} />
   </section>
 {/if}
 
