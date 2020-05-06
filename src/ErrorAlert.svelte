@@ -28,9 +28,9 @@
 <div
   class="uk-background-default"
   uk-alert
-  in:fade={{ duration: 1500, delay: 1000 }}
-  out:fade={{ duration: 0, delay: 0 }}>
-  <span class="uk-alert-close" uk-close on:click={() => (hasError = false)} />
+  in:fade={{ duration: 700, delay: 700 }}
+  out:fade={{ duration: 700, delay: 0 }}>
+  <span class="uk-alert-close" uk-close on:click />
   <h2>No Characters Found!</h2>
   <p>There were no characters matching your criteria. Please try again.</p>
   <section>

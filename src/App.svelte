@@ -215,7 +215,7 @@
 </style>
 
 <Banner />
-<div class="container">
+<div class="container" transition:fade={{ duration: 700, delay: 500 }}>
   <section class="uk-margin-bottom" id="home">
     <button class="uk-button uk-button-default " on:click={getCharacters}>
       Get All Characters
@@ -232,8 +232,12 @@
 </div>
 
 {#if hasCharacters}
-  <hr in:fade={{ delay: 1000 }} out:fade={{ delay: 0 }} />
-  <section in:fade={{ delay: 1000 }} out:fade={{ delay: 0 }}>
+  <hr
+    in:fade={{ duration: 700, delay: 700 }}
+    out:fade={{ duration: 700, delay: 0 }} />
+  <section
+    in:fade={{ duration: 700, delay: 700 }}
+    out:fade={{ duration: 700, delay: 0 }}>
     {#if previousPage != '' || nextPage != ''}
       <button
         class="uk-button uk-button-default mainButton"
@@ -249,14 +253,17 @@
       </button>
     {/if}
     <button
-      in:fade={{ delay: 1000 }}
+      in:fade={{ delay: 700 }}
       out:fade={{ delay: 0 }}
       class="uk-button uk-button-default"
       on:click={resetCharacters}>
       Clear All Characters
     </button>
   </section>
-  <section class="margin-top" in:fade={{ delay: 1000 }} out:fade={{ delay: 0 }}>
+  <section
+    class="margin-top"
+    in:fade={{ duration: 700, delay: 700 }}
+    out:fade={{ duration: 700, delay: 0 }}>
     {#each characters as character}
       <Card
         on:click
@@ -271,7 +278,7 @@
     {/each}
   </section>
   <section
-    in:fade={{ delay: 1000 }}
+    in:fade={{ delay: 700 }}
     out:fade={{ delay: 0 }}
     class="uk-margin-bottom bottom-nav">
     {#if previousPage != '' || nextPage != ''}
@@ -291,12 +298,16 @@
   </section>
   <Footer positionClass={'relative'} />
 {:else if hasCharacters || !hasError}
-  <section in:fade={{ delay: 1000 }} out:fade>
+  <section
+    in:fade={{ duration: 700, delay: 500 }}
+    out:fade={{ duration: 0, delay: 0 }}>
     <h3>
       Search for your favorite Rick and Morty characters or Get All to browse.
     </h3>
   </section>
-  <section>
+  <section
+    in:fade={{ duration: 700, delay: 500 }}
+    out:fade={{ duration: 0, delay: 0 }}>
     <Footer positionClass={'absolute'} />
   </section>
   <!-- <section in:fade={{ delay: 500 }} out:fade>
@@ -366,6 +377,11 @@
 <!-- Error -->
 {#if hasError}
   <section>
-    <ErrorAlert {hasError} />
+    <ErrorAlert on:click={() => (hasError = false)} />
+  </section>
+  <section
+    in:fade={{ duration: 700, delay: 500 }}
+    out:fade={{ duration: 0, delay: 0 }}>
+    <Footer positionClass={'relative'} />
   </section>
 {/if}

@@ -1,5 +1,6 @@
 <script>
   let src = "assets/banner.png";
+  import { fade } from "svelte/transition";
 </script>
 
 <style>
@@ -9,6 +10,6 @@
   }
 </style>
 
-<div class="banner">
+<div class="banner" transition:fade={{ duration: 700, delay: 500 }}>
   <img {src} alt="Rick and Morty" />
 </div>

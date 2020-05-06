@@ -1,5 +1,4 @@
 <script>
-  import { fade } from "svelte/transition";
   export let positionClass;
 </script>
 
@@ -26,7 +25,6 @@
     position: relative;
     bottom: 0;
     right: 3%;
-    align-items: baseline;
   }
 
   i {
@@ -38,10 +36,7 @@
   }
 </style>
 
-<section
-  class={positionClass}
-  in:fade={{ delay: 1000 }}
-  out:fade={{ delay: 0 }}>
+<section class={positionClass}>
   <a href="https://github.com/jdaake/rickAndMortyAPI" target="_blank">
     <i class="fab fa-github" />
   </a>
