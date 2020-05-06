@@ -21,9 +21,6 @@
     .banner {
       width: 100vw;
       margin: auto;
-      min-width: 300px;
-      justify-content: center;
-      align-content: center;
     }
   }
 </style>
