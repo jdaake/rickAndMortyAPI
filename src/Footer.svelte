@@ -46,7 +46,7 @@
   <a href="https://www.twitter.com/jdaake" target="_blank">
     <i class="fab fa-twitter" />
   </a>
-  <a href="https://www.linkedin.com/e/jdaake" target="_blank">
+  <a href="https://www.linkedin.com/in/jdaake" target="_blank">
     <i class="fab fa-linkedin" />
   </a>
 </section>
