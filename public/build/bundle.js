@@ -1187,8 +1187,8 @@ var app = (function () {
     			attr_dev(a2, "target", "_blank");
     			add_location(a2, file$1, 45, 2, 876);
     			attr_dev(i3, "class", "fab fa-linkedin svelte-moq7ac");
-    			add_location(i3, file$1, 49, 4, 1041);
-    			attr_dev(a3, "href", "https://www.linkedin.com/e/jdaake");
+    			add_location(i3, file$1, 49, 4, 1042);
+    			attr_dev(a3, "href", "https://www.linkedin.com/in/jdaake");
     			attr_dev(a3, "target", "_blank");
     			add_location(a3, file$1, 48, 2, 976);
     			attr_dev(section, "class", section_class_value = "" + (null_to_empty(/*positionClass*/ ctx[0]) + " svelte-moq7ac"));
