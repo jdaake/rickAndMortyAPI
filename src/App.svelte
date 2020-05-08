@@ -15,12 +15,6 @@
   let hasError = false;
   let prevIsDisabled;
   let nextIsDisabled;
-  let src;
-  let bgColor;
-  let originalBgColor = "background-color:black;";
-  let invertBgColor = "background-color:white;";
-  let originalSrc = "assets/banner.png";
-  let invertSrc = "assets/invertRotateBanner.png";
   let autofocus;
 
   function checkPages() {
@@ -48,57 +42,6 @@
     characterSpecies = "";
     characterGender = "";
     autofocus = "";
-  }
-
-  function twitch() {
-    setTimeout(() => {
-      src = invertSrc;
-      bgColor = invertBgColor;
-    }, 100);
-    setTimeout(() => {
-      src = originalSrc;
-      bgColor = originalBgColor;
-    }, 200);
-    setTimeout(() => {
-      src = invertSrc;
-      bgColor = invertBgColor;
-    }, 300);
-    setTimeout(() => {
-      src = originalSrc;
-      bgColor = originalBgColor;
-    }, 400);
-    setTimeout(() => {
-      src = invertSrc;
-      bgColor = invertBgColor;
-    }, 500);
-    setTimeout(() => {
-      src = originalSrc;
-      bgColor = originalBgColor;
-    }, 600);
-    setTimeout(() => {
-      src = invertSrc;
-      bgColor = invertBgColor;
-    }, 700);
-    setTimeout(() => {
-      src = originalSrc;
-      bgColor = originalBgColor;
-    }, 800);
-    setTimeout(() => {
-      src = invertSrc;
-      bgColor = invertBgColor;
-    }, 900);
-    setTimeout(() => {
-      src = originalSrc;
-      bgColor = originalBgColor;
-    }, 1000);
-    setTimeout(() => {
-      src = invertSrc;
-      bgColor = invertBgColor;
-    }, 1100);
-    setTimeout(() => {
-      src = originalSrc;
-      bgColor = originalBgColor;
-    }, 1200);
   }
 
   async function getCharacters() {
@@ -176,7 +119,6 @@
         nextPage = data.info.next;
         previousPage = data.info.prev;
         hasCharacters = true;
-        twitch();
       })
       .catch(err => {
         console.log(err);
@@ -194,9 +136,11 @@
     text-align: center;
     padding: 0 1.5rem 0 1.5rem;
   }
+
   h2 {
     font-family: monospace;
   }
+
   .container {
     margin: auto;
     margin-top: 2rem;
@@ -264,14 +208,11 @@
   }
 </style>
 
-<Banner {src} {bgColor} />
+<Banner />
 
 <div class="container" transition:fade={{ duration: 700, delay: 500 }}>
   <section class="uk-margin-bottom" id="home">
-    <button
-      class="uk-button uk-button-default "
-      on:click={getCharacters}
-      on:click={twitch}>
+    <button class="uk-button uk-button-default " on:click={getCharacters}>
       Get All Characters
     </button>
     <button
@@ -311,8 +252,7 @@
       in:fade={{ delay: 700 }}
       out:fade={{ delay: 0 }}
       class="uk-button uk-button-default"
-      on:click={resetCharacters}
-      on:click={twitch}>
+      on:click={resetCharacters}>
       Clear All Characters
     </button>
   </section>
