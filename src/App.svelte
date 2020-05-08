@@ -26,54 +26,57 @@
 
   function twitch() {
     setTimeout(() => {
-      src = invertSrc;
-      bgColor = invertBgColor;
-    }, 100);
-    setTimeout(() => {
-      src = originalSrc;
-      bgColor = originalBgColor;
-    }, 200);
-    setTimeout(() => {
-      src = invertSrc;
-      bgColor = invertBgColor;
-    }, 300);
-    setTimeout(() => {
-      src = originalSrc;
-      bgColor = originalBgColor;
-    }, 400);
-    setTimeout(() => {
-      src = invertSrc;
-      bgColor = invertBgColor;
-    }, 500);
-    setTimeout(() => {
-      src = originalSrc;
-      bgColor = originalBgColor;
-    }, 600);
-    setTimeout(() => {
-      src = invertSrc;
-      bgColor = invertBgColor;
-    }, 700);
-    setTimeout(() => {
-      src = originalSrc;
-      bgColor = originalBgColor;
-    }, 800);
-    setTimeout(() => {
-      src = invertSrc;
-      bgColor = invertBgColor;
-    }, 900);
-    setTimeout(() => {
-      src = originalSrc;
-      bgColor = originalBgColor;
-    }, 1000);
-    setTimeout(() => {
-      src = invertSrc;
-      bgColor = invertBgColor;
-    }, 1100);
-    setTimeout(() => {
-      src = originalSrc;
-      bgColor = originalBgColor;
-    }, 1200);
+      setTimeout(() => {
+        src = invertSrc;
+        bgColor = invertBgColor;
+      }, 100);
+      setTimeout(() => {
+        src = originalSrc;
+        bgColor = originalBgColor;
+      }, 200);
+      setTimeout(() => {
+        src = invertSrc;
+        bgColor = invertBgColor;
+      }, 300);
+      setTimeout(() => {
+        src = originalSrc;
+        bgColor = originalBgColor;
+      }, 400);
+      setTimeout(() => {
+        src = invertSrc;
+        bgColor = invertBgColor;
+      }, 500);
+      setTimeout(() => {
+        src = originalSrc;
+        bgColor = originalBgColor;
+      }, 600);
+      setTimeout(() => {
+        src = invertSrc;
+        bgColor = invertBgColor;
+      }, 700);
+      setTimeout(() => {
+        src = originalSrc;
+        bgColor = originalBgColor;
+      }, 800);
+      setTimeout(() => {
+        src = invertSrc;
+        bgColor = invertBgColor;
+      }, 900);
+      setTimeout(() => {
+        src = originalSrc;
+        bgColor = originalBgColor;
+      }, 1000);
+      setTimeout(() => {
+        src = invertSrc;
+        bgColor = invertBgColor;
+      }, 1100);
+      setTimeout(() => {
+        src = originalSrc;
+        bgColor = originalBgColor;
+      }, 1200);
+    }, 250);
   }
+
   function checkPages() {
     if (!nextPage || nextPage == "") {
       nextIsDisabled = true;
