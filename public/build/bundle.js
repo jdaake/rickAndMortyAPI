@@ -1554,20 +1554,20 @@ var app = (function () {
     			img = element("img");
     			attr_dev(span, "class", "uk-alert-close");
     			attr_dev(span, "uk-close", "");
-    			add_location(span, file$3, 32, 2, 577);
+    			add_location(span, file$3, 31, 2, 554);
     			attr_dev(h2, "class", "svelte-afrmxu");
-    			add_location(h2, file$3, 33, 2, 629);
+    			add_location(h2, file$3, 32, 2, 606);
     			attr_dev(p, "class", "svelte-afrmxu");
-    			add_location(p, file$3, 34, 2, 661);
+    			add_location(p, file$3, 33, 2, 638);
     			attr_dev(img, "class", "uk-padding-left svelte-afrmxu");
     			if (img.src !== (img_src_value = "https://media.giphy.com/media/3ov9k1ZNTELhynEI2A/giphy.gif")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
-    			add_location(img, file$3, 36, 4, 751);
+    			add_location(img, file$3, 35, 4, 728);
     			attr_dev(section, "class", "svelte-afrmxu");
-    			add_location(section, file$3, 35, 2, 737);
+    			add_location(section, file$3, 34, 2, 714);
     			attr_dev(div, "class", "uk-background-default");
     			attr_dev(div, "uk-alert", "");
-    			add_location(div, file$3, 27, 0, 443);
+    			add_location(div, file$3, 26, 0, 420);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1584,7 +1584,7 @@ var app = (function () {
     			append_dev(section, img);
     			current = true;
     			if (remount) dispose();
-    			dispose = listen_dev(span, "click", /*click_handler*/ ctx[1], false, false, false);
+    			dispose = listen_dev(span, "click", /*click_handler*/ ctx[0], false, false, false);
     		},
     		p: noop,
     		i: function intro(local) {
@@ -1622,8 +1622,7 @@ var app = (function () {
     }
 
     function instance$3($$self, $$props, $$invalidate) {
-    	let { hasError } = $$props;
-    	const writable_props = ["hasError"];
+    	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<ErrorAlert> was created with unknown prop '${key}'`);
@@ -1636,27 +1635,14 @@ var app = (function () {
     		bubble($$self, event);
     	}
 
-    	$$self.$set = $$props => {
-    		if ("hasError" in $$props) $$invalidate(0, hasError = $$props.hasError);
-    	};
-
-    	$$self.$capture_state = () => ({ fade, hasError });
-
-    	$$self.$inject_state = $$props => {
-    		if ("hasError" in $$props) $$invalidate(0, hasError = $$props.hasError);
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [hasError, click_handler];
+    	$$self.$capture_state = () => ({ fade });
+    	return [click_handler];
     }
 
     class ErrorAlert extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$3, create_fragment$3, safe_not_equal, { hasError: 0 });
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1664,21 +1650,6 @@ var app = (function () {
     			options,
     			id: create_fragment$3.name
     		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*hasError*/ ctx[0] === undefined && !("hasError" in props)) {
-    			console.warn("<ErrorAlert> was created without expected prop 'hasError'");
-    		}
-    	}
-
-    	get hasError() {
-    		throw new Error("<ErrorAlert>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set hasError(value) {
-    		throw new Error("<ErrorAlert>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
