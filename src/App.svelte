@@ -16,6 +16,7 @@
   let prevIsDisabled;
   let nextIsDisabled;
   let autofocus;
+  let modalIsOpen;
 
   function checkPages() {
     if (!nextPage || nextPage == "") {
@@ -42,6 +43,7 @@
     characterSpecies = "";
     characterGender = "";
     autofocus = "";
+    modalIsOpen = false;
   }
 
   async function getCharacters() {
@@ -219,8 +221,11 @@
       class="uk-button uk-button-default margin-bottom"
       href="#search-modal"
       uk-toggle
-      on:click={() => (hasError = false)}
-      on:click={() => (autofocus = 'autofocus')}>
+      on:click={() => {
+        hasError = false;
+        autofocus = 'autofocus';
+        modalIsOpen = true;
+      }}>
       <i class="fas fa-search" />
       Search
     </button>
@@ -303,11 +308,13 @@
       Search for your favorite Rick and Morty characters or Get All to browse.
     </h3>
   </section>
-  <section
-    in:fade={{ duration: 700, delay: 500 }}
-    out:fade={{ duration: 700, delay: 0 }}>
-    <Footer positionClass={'absolute'} />
-  </section>
+  {#if !modalIsOpen}
+    <section
+      in:fade={{ duration: 700, delay: 500 }}
+      out:fade={{ duration: 0, delay: 0 }}>
+      <Footer positionClass={'absolute'} />
+    </section>
+  {/if}
 {/if}
 
 <!-- Search Modal -->
