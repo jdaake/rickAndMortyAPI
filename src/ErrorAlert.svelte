@@ -33,9 +33,6 @@
   <h2>No Characters Found!</h2>
   <p>There were no characters matching your criteria. Please try again.</p>
   <section>
-    <img
-      class="uk-padding-left"
-      src="https://media.giphy.com/media/3ov9k1ZNTELhynEI2A/giphy.gif"
-      alt="" />
+    <img class="uk-padding-left" src="assets/rick.gif" alt="" />
   </section>
 </div>

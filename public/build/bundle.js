@@ -1451,7 +1451,7 @@ var app = (function () {
     			attr_dev(p, "class", "svelte-afrmxu");
     			add_location(p, file$3, 33, 2, 638);
     			attr_dev(img, "class", "uk-padding-left svelte-afrmxu");
-    			if (img.src !== (img_src_value = "https://media.giphy.com/media/3ov9k1ZNTELhynEI2A/giphy.gif")) attr_dev(img, "src", img_src_value);
+    			if (img.src !== (img_src_value = "assets/rick.gif")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
     			add_location(img, file$3, 35, 4, 728);
     			attr_dev(section, "class", "svelte-afrmxu");
@@ -1902,11 +1902,11 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[33] = list[i];
+    	child_ctx[28] = list[i];
     	return child_ctx;
     }
 
-    // (334:37) 
+    // (330:37) 
     function create_if_block_4(ctx) {
     	let section;
     	let h3;
@@ -1915,7 +1915,7 @@ var app = (function () {
     	let t1;
     	let if_block_anchor;
     	let current;
-    	let if_block = !/*modalIsOpen*/ ctx[8] && create_if_block_5(ctx);
+    	let if_block = !/*modalIsOpen*/ ctx[2] && create_if_block_5(ctx);
 
     	const block = {
     		c: function create() {
@@ -1926,9 +1926,9 @@ var app = (function () {
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
     			attr_dev(h3, "class", "svelte-jo13mg");
-    			add_location(h3, file$5, 337, 4, 8575);
+    			add_location(h3, file$5, 333, 4, 8550);
     			attr_dev(section, "class", "svelte-jo13mg");
-    			add_location(section, file$5, 334, 2, 8474);
+    			add_location(section, file$5, 330, 2, 8449);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -1939,9 +1939,9 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!/*modalIsOpen*/ ctx[8]) {
+    			if (!/*modalIsOpen*/ ctx[2]) {
     				if (if_block) {
-    					if (dirty[0] & /*modalIsOpen*/ 256) {
+    					if (dirty & /*modalIsOpen*/ 4) {
     						transition_in(if_block, 1);
     					}
     				} else {
@@ -1991,14 +1991,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(334:37) ",
+    		source: "(330:37) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (265:0) {#if hasCharacters}
+    // (261:0) {#if hasCharacters}
     function create_if_block_1(ctx) {
     	let hr;
     	let hr_intro;
@@ -2022,8 +2022,8 @@ var app = (function () {
     	let t5;
     	let current;
     	let dispose;
-    	let if_block0 = (/*previousPage*/ ctx[3] != "" || /*nextPage*/ ctx[2] != "") && create_if_block_3(ctx);
-    	let each_value = /*characters*/ ctx[1];
+    	let if_block0 = (/*previousPage*/ ctx[6] != "" || /*nextPage*/ ctx[5] != "") && create_if_block_3(ctx);
+    	let each_value = /*characters*/ ctx[3];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -2035,7 +2035,7 @@ var app = (function () {
     		each_blocks[i] = null;
     	});
 
-    	let if_block1 = (/*previousPage*/ ctx[3] != "" || /*nextPage*/ ctx[2] != "") && create_if_block_2(ctx);
+    	let if_block1 = (/*previousPage*/ ctx[6] != "" || /*nextPage*/ ctx[5] != "") && create_if_block_2(ctx);
 
     	const footer = new Footer({
     			props: { positionClass: "relative" },
@@ -2063,15 +2063,15 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			t5 = space();
     			create_component(footer.$$.fragment);
-    			add_location(hr, file$5, 265, 2, 6365);
+    			add_location(hr, file$5, 261, 2, 6340);
     			attr_dev(button, "class", "uk-button uk-button-default svelte-jo13mg");
-    			add_location(button, file$5, 285, 4, 7006);
+    			add_location(button, file$5, 281, 4, 6981);
     			attr_dev(section0, "class", "svelte-jo13mg");
-    			add_location(section0, file$5, 268, 2, 6461);
+    			add_location(section0, file$5, 264, 2, 6436);
     			attr_dev(section1, "class", "margin-top svelte-jo13mg");
-    			add_location(section1, file$5, 295, 2, 7248);
+    			add_location(section1, file$5, 291, 2, 7223);
     			attr_dev(section2, "class", "uk-margin-bottom bottom-nav svelte-jo13mg");
-    			add_location(section2, file$5, 311, 2, 7750);
+    			add_location(section2, file$5, 307, 2, 7725);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, hr, anchor);
@@ -2097,7 +2097,7 @@ var app = (function () {
     			dispose = listen_dev(button, "click", /*resetCharacters*/ ctx[12], false, false, false);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*previousPage*/ ctx[3] != "" || /*nextPage*/ ctx[2] != "") {
+    			if (/*previousPage*/ ctx[6] != "" || /*nextPage*/ ctx[5] != "") {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
@@ -2110,8 +2110,8 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (dirty[0] & /*characters*/ 2) {
-    				each_value = /*characters*/ ctx[1];
+    			if (dirty & /*characters*/ 8) {
+    				each_value = /*characters*/ ctx[3];
     				validate_each_argument(each_value);
     				let i;
 
@@ -2138,7 +2138,7 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (/*previousPage*/ ctx[3] != "" || /*nextPage*/ ctx[2] != "") {
+    			if (/*previousPage*/ ctx[6] != "" || /*nextPage*/ ctx[5] != "") {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
@@ -2237,14 +2237,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(265:0) {#if hasCharacters}",
+    		source: "(261:0) {#if hasCharacters}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (342:2) {#if !modalIsOpen}
+    // (338:2) {#if !modalIsOpen}
     function create_if_block_5(ctx) {
     	let section;
     	let section_intro;
@@ -2261,7 +2261,7 @@ var app = (function () {
     			section = element("section");
     			create_component(footer.$$.fragment);
     			attr_dev(section, "class", "svelte-jo13mg");
-    			add_location(section, file$5, 342, 4, 8707);
+    			add_location(section, file$5, 338, 4, 8682);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2297,14 +2297,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(342:2) {#if !modalIsOpen}",
+    		source: "(338:2) {#if !modalIsOpen}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (272:4) {#if previousPage != '' || nextPage != ''}
+    // (268:4) {#if previousPage != '' || nextPage != ''}
     function create_if_block_3(ctx) {
     	let button0;
     	let i0;
@@ -2321,15 +2321,15 @@ var app = (function () {
     			button1 = element("button");
     			i1 = element("i");
     			attr_dev(i0, "class", "fas fa-arrow-left");
-    			add_location(i0, file$5, 276, 8, 6752);
+    			add_location(i0, file$5, 272, 8, 6727);
     			attr_dev(button0, "class", "uk-button uk-button-default mainButton svelte-jo13mg");
-    			button0.disabled = /*prevIsDisabled*/ ctx[5];
-    			add_location(button0, file$5, 272, 6, 6611);
+    			button0.disabled = /*prevIsDisabled*/ ctx[7];
+    			add_location(button0, file$5, 268, 6, 6586);
     			attr_dev(i1, "class", "fas fa-arrow-right");
-    			add_location(i1, file$5, 282, 8, 6943);
+    			add_location(i1, file$5, 278, 8, 6918);
     			attr_dev(button1, "class", "uk-button uk-button-default mainButton svelte-jo13mg");
-    			button1.disabled = /*nextIsDisabled*/ ctx[6];
-    			add_location(button1, file$5, 278, 6, 6806);
+    			button1.disabled = /*nextIsDisabled*/ ctx[8];
+    			add_location(button1, file$5, 274, 6, 6781);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, button0, anchor);
@@ -2345,12 +2345,12 @@ var app = (function () {
     			];
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*prevIsDisabled*/ 32) {
-    				prop_dev(button0, "disabled", /*prevIsDisabled*/ ctx[5]);
+    			if (dirty & /*prevIsDisabled*/ 128) {
+    				prop_dev(button0, "disabled", /*prevIsDisabled*/ ctx[7]);
     			}
 
-    			if (dirty[0] & /*nextIsDisabled*/ 64) {
-    				prop_dev(button1, "disabled", /*nextIsDisabled*/ ctx[6]);
+    			if (dirty & /*nextIsDisabled*/ 256) {
+    				prop_dev(button1, "disabled", /*nextIsDisabled*/ ctx[8]);
     			}
     		},
     		d: function destroy(detaching) {
@@ -2365,33 +2365,33 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(272:4) {#if previousPage != '' || nextPage != ''}",
+    		source: "(268:4) {#if previousPage != '' || nextPage != ''}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (300:4) {#each characters as character}
+    // (296:4) {#each characters as character}
     function create_each_block(ctx) {
     	let current;
 
     	const card = new Card({
     			props: {
-    				name: /*character*/ ctx[33].name,
-    				status: /*character*/ ctx[33].status,
-    				species: /*character*/ ctx[33].species,
-    				gender: /*character*/ ctx[33].gender,
-    				origin: /*character*/ ctx[33].origin.name,
-    				image: /*character*/ ctx[33].image,
-    				statusClass: /*character*/ ctx[33].status == "Dead"
+    				name: /*character*/ ctx[28].name,
+    				status: /*character*/ ctx[28].status,
+    				species: /*character*/ ctx[28].species,
+    				gender: /*character*/ ctx[28].gender,
+    				origin: /*character*/ ctx[28].origin.name,
+    				image: /*character*/ ctx[28].image,
+    				statusClass: /*character*/ ctx[28].status == "Dead"
     				? "fas fa-skull-crossbones"
     				: ""
     			},
     			$$inline: true
     		});
 
-    	card.$on("click", /*click_handler*/ ctx[28]);
+    	card.$on("click", /*click_handler*/ ctx[23]);
 
     	const block = {
     		c: function create() {
@@ -2403,14 +2403,14 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const card_changes = {};
-    			if (dirty[0] & /*characters*/ 2) card_changes.name = /*character*/ ctx[33].name;
-    			if (dirty[0] & /*characters*/ 2) card_changes.status = /*character*/ ctx[33].status;
-    			if (dirty[0] & /*characters*/ 2) card_changes.species = /*character*/ ctx[33].species;
-    			if (dirty[0] & /*characters*/ 2) card_changes.gender = /*character*/ ctx[33].gender;
-    			if (dirty[0] & /*characters*/ 2) card_changes.origin = /*character*/ ctx[33].origin.name;
-    			if (dirty[0] & /*characters*/ 2) card_changes.image = /*character*/ ctx[33].image;
+    			if (dirty & /*characters*/ 8) card_changes.name = /*character*/ ctx[28].name;
+    			if (dirty & /*characters*/ 8) card_changes.status = /*character*/ ctx[28].status;
+    			if (dirty & /*characters*/ 8) card_changes.species = /*character*/ ctx[28].species;
+    			if (dirty & /*characters*/ 8) card_changes.gender = /*character*/ ctx[28].gender;
+    			if (dirty & /*characters*/ 8) card_changes.origin = /*character*/ ctx[28].origin.name;
+    			if (dirty & /*characters*/ 8) card_changes.image = /*character*/ ctx[28].image;
 
-    			if (dirty[0] & /*characters*/ 2) card_changes.statusClass = /*character*/ ctx[33].status == "Dead"
+    			if (dirty & /*characters*/ 8) card_changes.statusClass = /*character*/ ctx[28].status == "Dead"
     			? "fas fa-skull-crossbones"
     			: "";
 
@@ -2434,14 +2434,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(300:4) {#each characters as character}",
+    		source: "(296:4) {#each characters as character}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (316:4) {#if previousPage != '' || nextPage != ''}
+    // (312:4) {#if previousPage != '' || nextPage != ''}
     function create_if_block_2(ctx) {
     	let button0;
     	let i0;
@@ -2458,15 +2458,15 @@ var app = (function () {
     			button1 = element("button");
     			i1 = element("i");
     			attr_dev(i0, "class", "fas fa-arrow-left");
-    			add_location(i0, file$5, 321, 8, 8091);
+    			add_location(i0, file$5, 317, 8, 8066);
     			attr_dev(button0, "class", "uk-button uk-button-default svelte-jo13mg");
-    			button0.disabled = /*prevIsDisabled*/ ctx[5];
-    			add_location(button0, file$5, 316, 6, 7910);
+    			button0.disabled = /*prevIsDisabled*/ ctx[7];
+    			add_location(button0, file$5, 312, 6, 7885);
     			attr_dev(i1, "class", "fas fa-arrow-right");
-    			add_location(i1, file$5, 328, 8, 8322);
+    			add_location(i1, file$5, 324, 8, 8297);
     			attr_dev(button1, "class", "uk-button uk-button-default svelte-jo13mg");
-    			button1.disabled = /*nextIsDisabled*/ ctx[6];
-    			add_location(button1, file$5, 323, 6, 8145);
+    			button1.disabled = /*nextIsDisabled*/ ctx[8];
+    			add_location(button1, file$5, 319, 6, 8120);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, button0, anchor);
@@ -2478,18 +2478,18 @@ var app = (function () {
 
     			dispose = [
     				listen_dev(button0, "click", /*getPreviousPage*/ ctx[15], false, false, false),
-    				listen_dev(button0, "click", /*click_handler_2*/ ctx[29], false, false, false),
+    				listen_dev(button0, "click", /*click_handler_2*/ ctx[24], false, false, false),
     				listen_dev(button1, "click", /*getNextPage*/ ctx[14], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_3*/ ctx[30], false, false, false)
+    				listen_dev(button1, "click", /*click_handler_3*/ ctx[25], false, false, false)
     			];
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*prevIsDisabled*/ 32) {
-    				prop_dev(button0, "disabled", /*prevIsDisabled*/ ctx[5]);
+    			if (dirty & /*prevIsDisabled*/ 128) {
+    				prop_dev(button0, "disabled", /*prevIsDisabled*/ ctx[7]);
     			}
 
-    			if (dirty[0] & /*nextIsDisabled*/ 64) {
-    				prop_dev(button1, "disabled", /*nextIsDisabled*/ ctx[6]);
+    			if (dirty & /*nextIsDisabled*/ 256) {
+    				prop_dev(button1, "disabled", /*nextIsDisabled*/ ctx[8]);
     			}
     		},
     		d: function destroy(detaching) {
@@ -2504,14 +2504,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(316:4) {#if previousPage != '' || nextPage != ''}",
+    		source: "(312:4) {#if previousPage != '' || nextPage != ''}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (356:0) {#if hasError}
+    // (352:0) {#if hasError}
     function create_if_block(ctx) {
     	let section0;
     	let t;
@@ -2520,7 +2520,7 @@ var app = (function () {
     	let section1_outro;
     	let current;
     	const erroralert = new ErrorAlert({ $$inline: true });
-    	erroralert.$on("click", /*click_handler_4*/ ctx[32]);
+    	erroralert.$on("click", /*click_handler_4*/ ctx[27]);
 
     	const footer = new Footer({
     			props: { positionClass: "relative" },
@@ -2535,9 +2535,9 @@ var app = (function () {
     			section1 = element("section");
     			create_component(footer.$$.fragment);
     			attr_dev(section0, "class", "svelte-jo13mg");
-    			add_location(section0, file$5, 356, 2, 9023);
+    			add_location(section0, file$5, 352, 2, 8998);
     			attr_dev(section1, "class", "svelte-jo13mg");
-    			add_location(section1, file$5, 359, 2, 9103);
+    			add_location(section1, file$5, 355, 2, 9078);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section0, anchor);
@@ -2582,7 +2582,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(356:0) {#if hasError}",
+    		source: "(352:0) {#if hasError}",
     		ctx
     	});
 
@@ -2622,7 +2622,7 @@ var app = (function () {
 
     	function select_block_type(ctx, dirty) {
     		if (/*hasCharacters*/ ctx[0]) return 0;
-    		if (/*hasCharacters*/ ctx[0] || !/*hasError*/ ctx[4]) return 1;
+    		if (/*hasCharacters*/ ctx[0] || !/*hasError*/ ctx[1]) return 1;
     		return -1;
     	}
 
@@ -2631,13 +2631,13 @@ var app = (function () {
     	}
 
     	const modal = new Modal({
-    			props: { autofocus: /*autofocus*/ ctx[7] },
+    			props: { autofocus: /*autofocus*/ ctx[4] },
     			$$inline: true
     		});
 
     	modal.$on("searchCharacters", /*searchCharacters*/ ctx[16]);
-    	modal.$on("closeModal", /*closeModal_handler*/ ctx[31]);
-    	let if_block1 = /*hasError*/ ctx[4] && create_if_block(ctx);
+    	modal.$on("closeModal", /*closeModal_handler*/ ctx[26]);
+    	let if_block1 = /*hasError*/ ctx[1] && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
@@ -2659,18 +2659,18 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			if_block1_anchor = empty();
     			attr_dev(button0, "class", "uk-button uk-button-default  svelte-jo13mg");
-    			add_location(button0, file$5, 245, 4, 5878);
+    			add_location(button0, file$5, 241, 4, 5853);
     			attr_dev(i, "class", "fas fa-search");
-    			add_location(i, file$5, 257, 6, 6226);
+    			add_location(i, file$5, 253, 6, 6201);
     			attr_dev(button1, "class", "uk-button uk-button-default margin-bottom svelte-jo13mg");
     			attr_dev(button1, "href", "#search-modal");
     			attr_dev(button1, "uk-toggle", "");
-    			add_location(button1, file$5, 248, 4, 5992);
+    			add_location(button1, file$5, 244, 4, 5967);
     			attr_dev(section, "class", "uk-margin-bottom svelte-jo13mg");
     			attr_dev(section, "id", "home");
-    			add_location(section, file$5, 244, 2, 5829);
+    			add_location(section, file$5, 240, 2, 5804);
     			attr_dev(div, "class", "container svelte-jo13mg");
-    			add_location(div, file$5, 243, 0, 5755);
+    			add_location(div, file$5, 239, 0, 5730);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2701,13 +2701,13 @@ var app = (function () {
 
     			dispose = [
     				listen_dev(button0, "click", /*getCharacters*/ ctx[13], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_1*/ ctx[27], false, false, false)
+    				listen_dev(button1, "click", /*click_handler_1*/ ctx[22], false, false, false)
     			];
     		},
-    		p: function update(ctx, dirty) {
+    		p: function update(ctx, [dirty]) {
     			const banner_changes = {};
-    			if (dirty[0] & /*src*/ 512) banner_changes.src = /*src*/ ctx[9];
-    			if (dirty[0] & /*bgColor*/ 1024) banner_changes.bgColor = /*bgColor*/ ctx[10];
+    			if (dirty & /*src*/ 512) banner_changes.src = /*src*/ ctx[9];
+    			if (dirty & /*bgColor*/ 1024) banner_changes.bgColor = /*bgColor*/ ctx[10];
     			banner.$set(banner_changes);
     			let previous_block_index = current_block_type_index;
     			current_block_type_index = select_block_type(ctx);
@@ -2743,14 +2743,14 @@ var app = (function () {
     			}
 
     			const modal_changes = {};
-    			if (dirty[0] & /*autofocus*/ 128) modal_changes.autofocus = /*autofocus*/ ctx[7];
+    			if (dirty & /*autofocus*/ 16) modal_changes.autofocus = /*autofocus*/ ctx[4];
     			modal.$set(modal_changes);
 
-    			if (/*hasError*/ ctx[4]) {
+    			if (/*hasError*/ ctx[1]) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
 
-    					if (dirty[0] & /*hasError*/ 16) {
+    					if (dirty & /*hasError*/ 2) {
     						transition_in(if_block1, 1);
     					}
     				} else {
@@ -2825,27 +2825,21 @@ var app = (function () {
 
     function instance$5($$self, $$props, $$invalidate) {
     	let hasCharacters = false;
+    	let hasError = false;
+    	let modalIsOpen = false;
     	let characters = [];
+    	let autofocus;
     	let nextPage;
     	let previousPage;
-    	let characterName;
-    	let characterStatus;
-    	let characterSpecies;
-    	let characterGender;
-    	let hasError = false;
     	let prevIsDisabled;
     	let nextIsDisabled;
-    	let autofocus;
-    	let modalIsOpen = false;
     	let src = "assets/banner.png";
     	let bgColor = "background-color:black;";
     	let originalBgColor = "background-color:black;";
     	let originalSrc = "assets/banner.png";
     	let invertBgColor = "background-color:white;";
     	let invertSrc = "assets/invertRotateBanner.png";
-    	let count = 0;
 
-    	// let resetModal;
     	function twitch() {
     		setTimeout(
     			() => {
@@ -2951,34 +2945,34 @@ var app = (function () {
 
     	function checkPages() {
     		if (!nextPage || nextPage == "") {
-    			$$invalidate(6, nextIsDisabled = true);
+    			$$invalidate(8, nextIsDisabled = true);
     		} else {
-    			$$invalidate(6, nextIsDisabled = false);
+    			$$invalidate(8, nextIsDisabled = false);
     		}
 
     		if (!previousPage || previousPage == "") {
-    			$$invalidate(5, prevIsDisabled = true);
+    			$$invalidate(7, prevIsDisabled = true);
     		} else {
-    			$$invalidate(5, prevIsDisabled = false);
+    			$$invalidate(7, prevIsDisabled = false);
     		}
     	}
 
     	function resetCharacters() {
-    		$$invalidate(1, characters = []);
+    		$$invalidate(3, characters = []);
     		$$invalidate(0, hasCharacters = false);
-    		$$invalidate(4, hasError = false);
+    		$$invalidate(1, hasError = false);
     		twitch();
     	}
 
     	async function getCharacters() {
-    		$$invalidate(4, hasError = false);
+    		$$invalidate(1, hasError = false);
 
     		await fetch("https://rickandmortyapi.com/api/character/").then(res => {
     			return res.json();
     		}).then(data => {
-    			$$invalidate(1, characters = data.results);
-    			$$invalidate(2, nextPage = data.info.next ? data.info.next : "");
-    			$$invalidate(3, previousPage = data.info.prev ? data.info.prev : "");
+    			$$invalidate(3, characters = data.results);
+    			$$invalidate(5, nextPage = data.info.next ? data.info.next : "");
+    			$$invalidate(6, previousPage = data.info.prev ? data.info.prev : "");
     			$$invalidate(0, hasCharacters = true);
     		}).catch(err => {
     			console.log(err);
@@ -2991,9 +2985,9 @@ var app = (function () {
     		await fetch(nextPage).then(res => {
     			return res.json();
     		}).then(data => {
-    			$$invalidate(1, characters = data.results);
-    			$$invalidate(2, nextPage = data.info.next ? data.info.next : "");
-    			$$invalidate(3, previousPage = data.info.prev ? data.info.prev : "");
+    			$$invalidate(3, characters = data.results);
+    			$$invalidate(5, nextPage = data.info.next ? data.info.next : "");
+    			$$invalidate(6, previousPage = data.info.prev ? data.info.prev : "");
     			$$invalidate(0, hasCharacters = true);
     		}).catch(err => {
     			console.log(err);
@@ -3006,9 +3000,9 @@ var app = (function () {
     		await fetch(previousPage).then(res => {
     			return res.json();
     		}).then(data => {
-    			$$invalidate(1, characters = data.results);
-    			$$invalidate(2, nextPage = data.info.next ? data.info.next : "");
-    			$$invalidate(3, previousPage = data.info.prev ? data.info.prev : "");
+    			$$invalidate(3, characters = data.results);
+    			$$invalidate(5, nextPage = data.info.next ? data.info.next : "");
+    			$$invalidate(6, previousPage = data.info.prev ? data.info.prev : "");
     			$$invalidate(0, hasCharacters = true);
     		}).catch(err => {
     			console.log(err);
@@ -3018,38 +3012,40 @@ var app = (function () {
     	}
 
     	async function searchCharacters(event) {
-    		let hasName = !event.detail.characterName
+    		let characterName = !event.detail.characterName
     		? ""
     		: event.detail.characterName;
 
-    		let hasStatus = !event.detail.characterStatus
+    		let characterStatus = !event.detail.characterStatus
     		? ""
     		: event.detail.characterStatus;
 
-    		let hasSpecies = !event.detail.characterSpecies
+    		let characterSpecies = !event.detail.characterSpecies
     		? ""
     		: event.detail.characterSpecies;
 
-    		let hasGender = !event.detail.characterGender
+    		let characterGender = !event.detail.characterGender
     		? ""
     		: event.detail.characterGender;
 
-    		$$invalidate(7, autofocus = "");
-    		$$invalidate(4, hasError = false);
+    		$$invalidate(4, autofocus = "");
+    		$$invalidate(1, hasError = false);
 
-    		await fetch(`https://rickandmortyapi.com/api/character/?name=${hasName}&status=${hasStatus}&species=${hasSpecies}&gender=${hasGender}`).then(res => {
-    			if (!res.ok) {
-    				$$invalidate(0, hasCharacters = false);
-    				$$invalidate(4, hasError = true);
-    				return;
-    			} else {
+    		await fetch(`https://rickandmortyapi.com/api/character/?name=${characterName}&status=${characterStatus}&species=${characterSpecies}&gender=${characterGender}`).then(res => {
+    			if (res.ok) {
+    				$$invalidate(0, hasCharacters = true);
     				return res.json();
+    			} else {
+    				$$invalidate(0, hasCharacters = false);
+    				$$invalidate(1, hasError = true);
+    				return;
     			}
     		}).then(data => {
-    			$$invalidate(1, characters = data.results);
-    			$$invalidate(2, nextPage = data.info.next);
-    			$$invalidate(3, previousPage = data.info.prev);
-    			$$invalidate(0, hasCharacters = true);
+    			if (hasCharacters) {
+    				$$invalidate(3, characters = data.results);
+    				$$invalidate(5, nextPage = data.info.next);
+    				$$invalidate(6, previousPage = data.info.prev);
+    			}
     		}).catch(err => {
     			console.log(err);
     		});
@@ -3067,9 +3063,9 @@ var app = (function () {
     	validate_slots("App", $$slots, []);
 
     	const click_handler_1 = () => {
-    		$$invalidate(4, hasError = false);
-    		$$invalidate(8, modalIsOpen = true);
-    		$$invalidate(7, autofocus = "autofocus");
+    		$$invalidate(1, hasError = false);
+    		$$invalidate(2, modalIsOpen = true);
+    		$$invalidate(4, autofocus = "autofocus");
     	};
 
     	function click_handler(event) {
@@ -3078,8 +3074,8 @@ var app = (function () {
 
     	const click_handler_2 = () => location.href = "#home";
     	const click_handler_3 = () => location.href = "#home";
-    	const closeModal_handler = () => $$invalidate(8, modalIsOpen = false);
-    	const click_handler_4 = () => $$invalidate(4, hasError = false);
+    	const closeModal_handler = () => $$invalidate(2, modalIsOpen = false);
+    	const click_handler_4 = () => $$invalidate(1, hasError = false);
 
     	$$self.$capture_state = () => ({
     		Card,
@@ -3089,25 +3085,20 @@ var app = (function () {
     		fade,
     		Modal,
     		hasCharacters,
+    		hasError,
+    		modalIsOpen,
     		characters,
+    		autofocus,
     		nextPage,
     		previousPage,
-    		characterName,
-    		characterStatus,
-    		characterSpecies,
-    		characterGender,
-    		hasError,
     		prevIsDisabled,
     		nextIsDisabled,
-    		autofocus,
-    		modalIsOpen,
     		src,
     		bgColor,
     		originalBgColor,
     		originalSrc,
     		invertBgColor,
     		invertSrc,
-    		count,
     		twitch,
     		checkPages,
     		resetCharacters,
@@ -3119,25 +3110,20 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ("hasCharacters" in $$props) $$invalidate(0, hasCharacters = $$props.hasCharacters);
-    		if ("characters" in $$props) $$invalidate(1, characters = $$props.characters);
-    		if ("nextPage" in $$props) $$invalidate(2, nextPage = $$props.nextPage);
-    		if ("previousPage" in $$props) $$invalidate(3, previousPage = $$props.previousPage);
-    		if ("characterName" in $$props) characterName = $$props.characterName;
-    		if ("characterStatus" in $$props) characterStatus = $$props.characterStatus;
-    		if ("characterSpecies" in $$props) characterSpecies = $$props.characterSpecies;
-    		if ("characterGender" in $$props) characterGender = $$props.characterGender;
-    		if ("hasError" in $$props) $$invalidate(4, hasError = $$props.hasError);
-    		if ("prevIsDisabled" in $$props) $$invalidate(5, prevIsDisabled = $$props.prevIsDisabled);
-    		if ("nextIsDisabled" in $$props) $$invalidate(6, nextIsDisabled = $$props.nextIsDisabled);
-    		if ("autofocus" in $$props) $$invalidate(7, autofocus = $$props.autofocus);
-    		if ("modalIsOpen" in $$props) $$invalidate(8, modalIsOpen = $$props.modalIsOpen);
+    		if ("hasError" in $$props) $$invalidate(1, hasError = $$props.hasError);
+    		if ("modalIsOpen" in $$props) $$invalidate(2, modalIsOpen = $$props.modalIsOpen);
+    		if ("characters" in $$props) $$invalidate(3, characters = $$props.characters);
+    		if ("autofocus" in $$props) $$invalidate(4, autofocus = $$props.autofocus);
+    		if ("nextPage" in $$props) $$invalidate(5, nextPage = $$props.nextPage);
+    		if ("previousPage" in $$props) $$invalidate(6, previousPage = $$props.previousPage);
+    		if ("prevIsDisabled" in $$props) $$invalidate(7, prevIsDisabled = $$props.prevIsDisabled);
+    		if ("nextIsDisabled" in $$props) $$invalidate(8, nextIsDisabled = $$props.nextIsDisabled);
     		if ("src" in $$props) $$invalidate(9, src = $$props.src);
     		if ("bgColor" in $$props) $$invalidate(10, bgColor = $$props.bgColor);
     		if ("originalBgColor" in $$props) originalBgColor = $$props.originalBgColor;
     		if ("originalSrc" in $$props) originalSrc = $$props.originalSrc;
     		if ("invertBgColor" in $$props) invertBgColor = $$props.invertBgColor;
     		if ("invertSrc" in $$props) invertSrc = $$props.invertSrc;
-    		if ("count" in $$props) count = $$props.count;
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -3146,14 +3132,14 @@ var app = (function () {
 
     	return [
     		hasCharacters,
+    		hasError,
+    		modalIsOpen,
     		characters,
+    		autofocus,
     		nextPage,
     		previousPage,
-    		hasError,
     		prevIsDisabled,
     		nextIsDisabled,
-    		autofocus,
-    		modalIsOpen,
     		src,
     		bgColor,
     		twitch,
@@ -3162,15 +3148,10 @@ var app = (function () {
     		getNextPage,
     		getPreviousPage,
     		searchCharacters,
-    		characterName,
-    		characterStatus,
-    		characterSpecies,
-    		characterGender,
     		originalBgColor,
     		originalSrc,
     		invertBgColor,
     		invertSrc,
-    		count,
     		checkPages,
     		click_handler_1,
     		click_handler,
@@ -3184,7 +3165,7 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$5, create_fragment$5, safe_not_equal, {}, [-1, -1]);
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,

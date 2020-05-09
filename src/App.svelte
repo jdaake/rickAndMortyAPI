@@ -6,26 +6,20 @@
   import { fade } from "svelte/transition";
   import Modal from "./Modal.svelte";
   let hasCharacters = false;
+  let hasError = false;
+  let modalIsOpen = false;
   let characters = [];
+  let autofocus;
   let nextPage;
   let previousPage;
-  let characterName;
-  let characterStatus;
-  let characterSpecies;
-  let characterGender;
-  let hasError = false;
   let prevIsDisabled;
   let nextIsDisabled;
-  let autofocus;
-  let modalIsOpen = false;
   let src = "assets/banner.png";
   let bgColor = "background-color:black;";
   let originalBgColor = "background-color:black;";
   let originalSrc = "assets/banner.png";
   let invertBgColor = "background-color:white;";
   let invertSrc = "assets/invertRotateBanner.png";
-  let count = 0;
-  // let resetModal;
 
   function twitch() {
     setTimeout(() => {
@@ -153,37 +147,39 @@
   }
 
   async function searchCharacters(event) {
-    let hasName = !event.detail.characterName ? "" : event.detail.characterName;
-    let hasStatus = !event.detail.characterStatus
+    let characterName = !event.detail.characterName
+      ? ""
+      : event.detail.characterName;
+    let characterStatus = !event.detail.characterStatus
       ? ""
       : event.detail.characterStatus;
-    let hasSpecies = !event.detail.characterSpecies
+    let characterSpecies = !event.detail.characterSpecies
       ? ""
       : event.detail.characterSpecies;
-    let hasGender = !event.detail.characterGender
+    let characterGender = !event.detail.characterGender
       ? ""
       : event.detail.characterGender;
-
     autofocus = "";
-
     hasError = false;
     await fetch(
-      `https://rickandmortyapi.com/api/character/?name=${hasName}&status=${hasStatus}&species=${hasSpecies}&gender=${hasGender}`
+      `https://rickandmortyapi.com/api/character/?name=${characterName}&status=${characterStatus}&species=${characterSpecies}&gender=${characterGender}`
     )
       .then(res => {
-        if (!res.ok) {
+        if (res.ok) {
+          hasCharacters = true;
+          return res.json();
+        } else {
           hasCharacters = false;
           hasError = true;
           return;
-        } else {
-          return res.json();
         }
       })
       .then(data => {
-        characters = data.results;
-        nextPage = data.info.next;
-        previousPage = data.info.prev;
-        hasCharacters = true;
+        if (hasCharacters) {
+          characters = data.results;
+          nextPage = data.info.next;
+          previousPage = data.info.prev;
+        }
       })
       .catch(err => {
         console.log(err);
