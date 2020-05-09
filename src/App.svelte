@@ -4,6 +4,7 @@
   import Banner from "./Banner.svelte";
   import ErrorAlert from "./ErrorAlert.svelte";
   import { fade } from "svelte/transition";
+  import Modal from "./Modal.svelte";
   let hasCharacters = false;
   let characters = [];
   let nextPage;
@@ -16,13 +17,14 @@
   let prevIsDisabled;
   let nextIsDisabled;
   let autofocus;
-  let modalIsOpen;
+  let modalIsOpen = false;
   let src = "assets/banner.png";
   let bgColor = "background-color:black;";
   let originalBgColor = "background-color:black;";
   let originalSrc = "assets/banner.png";
   let invertBgColor = "background-color:white;";
   let invertSrc = "assets/invertRotateBanner.png";
+  // let resetModal;
 
   function twitch() {
     setTimeout(() => {
@@ -97,15 +99,6 @@
     twitch();
   }
 
-  function resetModal() {
-    characterName = "";
-    characterStatus = "";
-    characterSpecies = "";
-    characterGender = "";
-    autofocus = "";
-    modalIsOpen = false;
-  }
-
   async function getCharacters() {
     hasError = false;
     await fetch("https://rickandmortyapi.com/api/character/")
@@ -158,11 +151,20 @@
     checkPages();
   }
 
-  async function searchCharacters(name, status, species, gender) {
-    let hasName = !name ? "" : name;
-    let hasStatus = !status ? "" : status;
-    let hasSpecies = !species ? "" : species;
-    let hasGender = !gender ? "" : gender;
+  async function searchCharacters(event) {
+    let hasName = !event.detail.characterName ? "" : event.detail.characterName;
+    let hasStatus = !event.detail.characterStatus
+      ? ""
+      : event.detail.characterStatus;
+    let hasSpecies = !event.detail.characterSpecies
+      ? ""
+      : event.detail.characterSpecies;
+    let hasGender = !event.detail.characterGender
+      ? ""
+      : event.detail.characterGender;
+
+    autofocus = "";
+
     hasError = false;
     await fetch(
       `https://rickandmortyapi.com/api/character/?name=${hasName}&status=${hasStatus}&species=${hasSpecies}&gender=${hasGender}`
@@ -186,7 +188,6 @@
         console.log(err);
       });
     checkPages();
-    resetModal();
   }
 </script>
 
@@ -197,10 +198,6 @@
     font-family: "Permanent Marker", cursive;
     text-align: center;
     padding: 0 1.5rem 0 1.5rem;
-  }
-
-  h2 {
-    font-family: monospace;
   }
 
   .container {
@@ -216,38 +213,9 @@
     justify-content: center;
     margin: auto;
   }
-  /* section > img {
-    min-width: 275px;
-    width: 600px;
-  } */
 
   section.margin-top {
     margin-top: -1rem;
-  }
-
-  input {
-    display: block;
-    width: 100%;
-    font: inherit;
-    border: none;
-    border-bottom: 2px solid #ccc;
-    border-radius: 3px 3px 0 0;
-    background: white;
-    padding: 0.15rem 0.25rem;
-    transition: border-color 0.1s ease-out;
-    margin-bottom: 0.8rem;
-  }
-
-  input:focus {
-    border-color: rgba(141, 225, 86, 1);
-    outline: none;
-  }
-
-  span {
-    display: block;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    font-family: monospace;
   }
 
   button {
@@ -283,8 +251,8 @@
       uk-toggle
       on:click={() => {
         hasError = false;
-        autofocus = 'autofocus';
         modalIsOpen = true;
+        autofocus = 'autofocus';
       }}>
       <i class="fas fa-search" />
       Search
@@ -292,6 +260,7 @@
   </section>
 </div>
 
+<!-- Navigation and Clear characters -->
 {#if hasCharacters}
   <hr
     in:fade={{ duration: 700, delay: 700 }}
@@ -321,6 +290,8 @@
       Clear All Characters
     </button>
   </section>
+
+  <!-- Loop through character cards -->
   <section
     class="margin-top"
     in:fade={{ duration: 700, delay: 700 }}
@@ -376,66 +347,10 @@
     </section>
   {/if}
 {/if}
-
-<!-- Search Modal -->
-<!-- Need to move to own component and figure out how to pass values to app.svelte -->
-<div id="search-modal" uk-modal>
-  <div class="uk-modal-dialog">
-    <button
-      class="uk-modal-close-default"
-      type="button"
-      uk-close
-      on:click={resetModal} />
-    <div class="uk-modal-header">
-      <h2 class="uk-modal-title">
-        Search for your favorite Rick and Morty Characters!
-      </h2>
-    </div>
-    <div class="uk-modal-body">
-      <span for="characterName">Name:</span>
-      <input
-        {autofocus}
-        bind:value={characterName}
-        type="text"
-        name="characterName" />
-      <span for="characterStatus">Status:</span>
-      <input
-        bind:value={characterStatus}
-        uk-tooltip="Dead, alive, or unknown"
-        type="text"
-        name="characterStatus" />
-      <span for="characterSpecies">Species:</span>
-      <input
-        bind:value={characterSpecies}
-        uk-tooltip="Human, humanoid, robot, unknown, etc."
-        type="text"
-        name="characterSpecies" />
-      <span for="characterGender">Gender:</span>
-      <input
-        bind:value={characterGender}
-        uk-tooltip="Male or Female"
-        type="text"
-        name="characterGender" />
-    </div>
-    <div class="uk-modal-footer uk-text-right">
-      <button
-        class="uk-button uk-button-default uk-modal-close"
-        type="button"
-        on:click={resetModal}>
-        Cancel
-      </button>
-      <button
-        on:click={() => {
-          autofocus = '';
-        }}
-        on:click={searchCharacters(characterName, characterStatus, characterSpecies, characterGender)}
-        class="uk-button uk-button-default uk-modal-close"
-        type="button">
-        Go
-      </button>
-    </div>
-  </div>
-</div>
+<Modal
+  {autofocus}
+  on:searchCharacters={searchCharacters}
+  on:closeModal={() => (modalIsOpen = false)} />
 
 <!-- Error -->
 {#if hasError}
