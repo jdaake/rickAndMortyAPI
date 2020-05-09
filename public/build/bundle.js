@@ -748,11 +748,6 @@ var app = (function () {
         $inject_state() { }
     }
 
-    function cubicOut(t) {
-        const f = t - 1.0;
-        return f * f * f + 1.0;
-    }
-
     function fade(node, { delay = 0, duration = 400, easing = identity }) {
         const o = +getComputedStyle(node).opacity;
         return {
@@ -760,20 +755,6 @@ var app = (function () {
             duration,
             easing,
             css: t => `opacity: ${t * o}`
-        };
-    }
-    function fly(node, { delay = 0, duration = 400, easing = cubicOut, x = 0, y = 0, opacity = 0 }) {
-        const style = getComputedStyle(node);
-        const target_opacity = +style.opacity;
-        const transform = style.transform === 'none' ? '' : style.transform;
-        const od = target_opacity * (1 - opacity);
-        return {
-            delay,
-            duration,
-            easing,
-            css: (t, u) => `
-			transform: ${transform} translate(${(1 - t) * x}px, ${(1 - t) * y}px);
-			opacity: ${target_opacity - (od * u)}`
         };
     }
 
@@ -841,47 +822,47 @@ var app = (function () {
     			t7 = space();
     			div2 = element("div");
     			t8 = text("Species: ");
-    			t9 = text(/*species*/ ctx[4]);
+    			t9 = text(/*species*/ ctx[3]);
     			t10 = space();
     			hr1 = element("hr");
     			t11 = space();
     			div3 = element("div");
     			t12 = text("Gender: ");
-    			t13 = text(/*gender*/ ctx[6]);
+    			t13 = text(/*gender*/ ctx[5]);
     			t14 = space();
     			hr2 = element("hr");
     			t15 = space();
     			div4 = element("div");
     			t16 = text("Origin: ");
-    			t17 = text(/*origin*/ ctx[5]);
-    			if (img.src !== (img_src_value = /*imgUrl*/ ctx[2])) attr_dev(img, "src", img_src_value);
+    			t17 = text(/*origin*/ ctx[4]);
+    			if (img.src !== (img_src_value = /*image*/ ctx[2])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*name*/ ctx[0]);
-    			attr_dev(img, "class", "svelte-r5ajpf");
-    			add_location(img, file, 62, 6, 1472);
-    			attr_dev(i, "class", i_class_value = "" + (null_to_empty(/*statusClass*/ ctx[7]) + " svelte-r5ajpf"));
-    			add_location(i, file, 65, 10, 1596);
-    			attr_dev(h3, "class", "svelte-r5ajpf");
-    			add_location(h3, file, 64, 8, 1581);
-    			attr_dev(div0, "class", "uk-overlay uk-overlay-primary uk-position-bottom svelte-r5ajpf");
-    			add_location(div0, file, 63, 6, 1510);
-    			attr_dev(a, "href", /*linkImage*/ ctx[3]);
-    			attr_dev(a, "class", "svelte-r5ajpf");
-    			add_location(a, file, 61, 4, 1445);
-    			attr_dev(header, "class", "image uk-inline svelte-r5ajpf");
+    			attr_dev(img, "class", "svelte-3iy5fs");
+    			add_location(img, file, 61, 6, 1437);
+    			attr_dev(i, "class", i_class_value = "" + (null_to_empty(/*statusClass*/ ctx[6]) + " svelte-3iy5fs"));
+    			add_location(i, file, 64, 10, 1560);
+    			attr_dev(h3, "class", "svelte-3iy5fs");
+    			add_location(h3, file, 63, 8, 1545);
+    			attr_dev(div0, "class", "uk-overlay uk-overlay-primary uk-position-bottom svelte-3iy5fs");
+    			add_location(div0, file, 62, 6, 1474);
+    			attr_dev(a, "href", /*image*/ ctx[2]);
+    			attr_dev(a, "class", "svelte-3iy5fs");
+    			add_location(a, file, 60, 4, 1414);
+    			attr_dev(header, "class", "image uk-inline svelte-3iy5fs");
     			attr_dev(header, "uk-lightbox", "transition: fade");
-    			add_location(header, file, 60, 2, 1377);
-    			add_location(div1, file, 73, 6, 1727);
-    			add_location(hr0, file, 74, 6, 1761);
-    			add_location(div2, file, 75, 6, 1774);
-    			add_location(hr1, file, 76, 6, 1810);
-    			add_location(div3, file, 77, 6, 1823);
-    			add_location(hr2, file, 78, 6, 1857);
-    			add_location(div4, file, 79, 6, 1870);
-    			attr_dev(div5, "class", "details svelte-r5ajpf");
-    			add_location(div5, file, 72, 4, 1699);
-    			add_location(div6, file, 71, 2, 1689);
-    			attr_dev(div7, "class", "container svelte-r5ajpf");
-    			add_location(div7, file, 59, 0, 1351);
+    			add_location(header, file, 59, 2, 1346);
+    			add_location(div1, file, 72, 6, 1691);
+    			add_location(hr0, file, 73, 6, 1725);
+    			add_location(div2, file, 74, 6, 1738);
+    			add_location(hr1, file, 75, 6, 1774);
+    			add_location(div3, file, 76, 6, 1787);
+    			add_location(hr2, file, 77, 6, 1821);
+    			add_location(div4, file, 78, 6, 1834);
+    			attr_dev(div5, "class", "details svelte-3iy5fs");
+    			add_location(div5, file, 71, 4, 1663);
+    			add_location(div6, file, 70, 2, 1653);
+    			attr_dev(div7, "class", "container svelte-3iy5fs");
+    			add_location(div7, file, 58, 0, 1320);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -923,7 +904,7 @@ var app = (function () {
     			append_dev(div4, t17);
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*imgUrl*/ 4 && img.src !== (img_src_value = /*imgUrl*/ ctx[2])) {
+    			if (dirty & /*image*/ 4 && img.src !== (img_src_value = /*image*/ ctx[2])) {
     				attr_dev(img, "src", img_src_value);
     			}
 
@@ -931,20 +912,20 @@ var app = (function () {
     				attr_dev(img, "alt", /*name*/ ctx[0]);
     			}
 
-    			if (dirty & /*statusClass*/ 128 && i_class_value !== (i_class_value = "" + (null_to_empty(/*statusClass*/ ctx[7]) + " svelte-r5ajpf"))) {
+    			if (dirty & /*statusClass*/ 64 && i_class_value !== (i_class_value = "" + (null_to_empty(/*statusClass*/ ctx[6]) + " svelte-3iy5fs"))) {
     				attr_dev(i, "class", i_class_value);
     			}
 
     			if (dirty & /*name*/ 1) set_data_dev(t2, /*name*/ ctx[0]);
 
-    			if (dirty & /*linkImage*/ 8) {
-    				attr_dev(a, "href", /*linkImage*/ ctx[3]);
+    			if (dirty & /*image*/ 4) {
+    				attr_dev(a, "href", /*image*/ ctx[2]);
     			}
 
     			if (dirty & /*status*/ 2) set_data_dev(t5, /*status*/ ctx[1]);
-    			if (dirty & /*species*/ 16) set_data_dev(t9, /*species*/ ctx[4]);
-    			if (dirty & /*gender*/ 64) set_data_dev(t13, /*gender*/ ctx[6]);
-    			if (dirty & /*origin*/ 32) set_data_dev(t17, /*origin*/ ctx[5]);
+    			if (dirty & /*species*/ 8) set_data_dev(t9, /*species*/ ctx[3]);
+    			if (dirty & /*gender*/ 32) set_data_dev(t13, /*gender*/ ctx[5]);
+    			if (dirty & /*origin*/ 16) set_data_dev(t17, /*origin*/ ctx[4]);
     		},
     		i: noop,
     		o: noop,
@@ -967,23 +948,12 @@ var app = (function () {
     function instance($$self, $$props, $$invalidate) {
     	let { name } = $$props;
     	let { status } = $$props;
-    	let { imgUrl } = $$props;
-    	let { linkImage } = $$props;
+    	let { image } = $$props;
     	let { species } = $$props;
     	let { origin } = $$props;
     	let { gender } = $$props;
     	let { statusClass } = $$props;
-
-    	const writable_props = [
-    		"name",
-    		"status",
-    		"imgUrl",
-    		"linkImage",
-    		"species",
-    		"origin",
-    		"gender",
-    		"statusClass"
-    	];
+    	const writable_props = ["name", "status", "image", "species", "origin", "gender", "statusClass"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Card> was created with unknown prop '${key}'`);
@@ -995,21 +965,18 @@ var app = (function () {
     	$$self.$set = $$props => {
     		if ("name" in $$props) $$invalidate(0, name = $$props.name);
     		if ("status" in $$props) $$invalidate(1, status = $$props.status);
-    		if ("imgUrl" in $$props) $$invalidate(2, imgUrl = $$props.imgUrl);
-    		if ("linkImage" in $$props) $$invalidate(3, linkImage = $$props.linkImage);
-    		if ("species" in $$props) $$invalidate(4, species = $$props.species);
-    		if ("origin" in $$props) $$invalidate(5, origin = $$props.origin);
-    		if ("gender" in $$props) $$invalidate(6, gender = $$props.gender);
-    		if ("statusClass" in $$props) $$invalidate(7, statusClass = $$props.statusClass);
+    		if ("image" in $$props) $$invalidate(2, image = $$props.image);
+    		if ("species" in $$props) $$invalidate(3, species = $$props.species);
+    		if ("origin" in $$props) $$invalidate(4, origin = $$props.origin);
+    		if ("gender" in $$props) $$invalidate(5, gender = $$props.gender);
+    		if ("statusClass" in $$props) $$invalidate(6, statusClass = $$props.statusClass);
     	};
 
     	$$self.$capture_state = () => ({
     		fade,
-    		fly,
     		name,
     		status,
-    		imgUrl,
-    		linkImage,
+    		image,
     		species,
     		origin,
     		gender,
@@ -1019,19 +986,18 @@ var app = (function () {
     	$$self.$inject_state = $$props => {
     		if ("name" in $$props) $$invalidate(0, name = $$props.name);
     		if ("status" in $$props) $$invalidate(1, status = $$props.status);
-    		if ("imgUrl" in $$props) $$invalidate(2, imgUrl = $$props.imgUrl);
-    		if ("linkImage" in $$props) $$invalidate(3, linkImage = $$props.linkImage);
-    		if ("species" in $$props) $$invalidate(4, species = $$props.species);
-    		if ("origin" in $$props) $$invalidate(5, origin = $$props.origin);
-    		if ("gender" in $$props) $$invalidate(6, gender = $$props.gender);
-    		if ("statusClass" in $$props) $$invalidate(7, statusClass = $$props.statusClass);
+    		if ("image" in $$props) $$invalidate(2, image = $$props.image);
+    		if ("species" in $$props) $$invalidate(3, species = $$props.species);
+    		if ("origin" in $$props) $$invalidate(4, origin = $$props.origin);
+    		if ("gender" in $$props) $$invalidate(5, gender = $$props.gender);
+    		if ("statusClass" in $$props) $$invalidate(6, statusClass = $$props.statusClass);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [name, status, imgUrl, linkImage, species, origin, gender, statusClass];
+    	return [name, status, image, species, origin, gender, statusClass];
     }
 
     class Card extends SvelteComponentDev {
@@ -1041,12 +1007,11 @@ var app = (function () {
     		init(this, options, instance, create_fragment, safe_not_equal, {
     			name: 0,
     			status: 1,
-    			imgUrl: 2,
-    			linkImage: 3,
-    			species: 4,
-    			origin: 5,
-    			gender: 6,
-    			statusClass: 7
+    			image: 2,
+    			species: 3,
+    			origin: 4,
+    			gender: 5,
+    			statusClass: 6
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -1067,27 +1032,23 @@ var app = (function () {
     			console.warn("<Card> was created without expected prop 'status'");
     		}
 
-    		if (/*imgUrl*/ ctx[2] === undefined && !("imgUrl" in props)) {
-    			console.warn("<Card> was created without expected prop 'imgUrl'");
+    		if (/*image*/ ctx[2] === undefined && !("image" in props)) {
+    			console.warn("<Card> was created without expected prop 'image'");
     		}
 
-    		if (/*linkImage*/ ctx[3] === undefined && !("linkImage" in props)) {
-    			console.warn("<Card> was created without expected prop 'linkImage'");
-    		}
-
-    		if (/*species*/ ctx[4] === undefined && !("species" in props)) {
+    		if (/*species*/ ctx[3] === undefined && !("species" in props)) {
     			console.warn("<Card> was created without expected prop 'species'");
     		}
 
-    		if (/*origin*/ ctx[5] === undefined && !("origin" in props)) {
+    		if (/*origin*/ ctx[4] === undefined && !("origin" in props)) {
     			console.warn("<Card> was created without expected prop 'origin'");
     		}
 
-    		if (/*gender*/ ctx[6] === undefined && !("gender" in props)) {
+    		if (/*gender*/ ctx[5] === undefined && !("gender" in props)) {
     			console.warn("<Card> was created without expected prop 'gender'");
     		}
 
-    		if (/*statusClass*/ ctx[7] === undefined && !("statusClass" in props)) {
+    		if (/*statusClass*/ ctx[6] === undefined && !("statusClass" in props)) {
     			console.warn("<Card> was created without expected prop 'statusClass'");
     		}
     	}
@@ -1108,19 +1069,11 @@ var app = (function () {
     		throw new Error("<Card>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	get imgUrl() {
+    	get image() {
     		throw new Error("<Card>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	set imgUrl(value) {
-    		throw new Error("<Card>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get linkImage() {
-    		throw new Error("<Card>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set linkImage(value) {
+    	set image(value) {
     		throw new Error("<Card>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
@@ -1949,7 +1902,7 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[32] = list[i];
+    	child_ctx[33] = list[i];
     	return child_ctx;
     }
 
@@ -1973,9 +1926,9 @@ var app = (function () {
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
     			attr_dev(h3, "class", "svelte-jo13mg");
-    			add_location(h3, file$5, 337, 4, 8595);
+    			add_location(h3, file$5, 337, 4, 8575);
     			attr_dev(section, "class", "svelte-jo13mg");
-    			add_location(section, file$5, 334, 2, 8494);
+    			add_location(section, file$5, 334, 2, 8474);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2045,7 +1998,7 @@ var app = (function () {
     	return block;
     }
 
-    // (264:0) {#if hasCharacters}
+    // (265:0) {#if hasCharacters}
     function create_if_block_1(ctx) {
     	let hr;
     	let hr_intro;
@@ -2110,15 +2063,15 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			t5 = space();
     			create_component(footer.$$.fragment);
-    			add_location(hr, file$5, 264, 2, 6348);
+    			add_location(hr, file$5, 265, 2, 6365);
     			attr_dev(button, "class", "uk-button uk-button-default svelte-jo13mg");
-    			add_location(button, file$5, 284, 4, 6989);
+    			add_location(button, file$5, 285, 4, 7006);
     			attr_dev(section0, "class", "svelte-jo13mg");
-    			add_location(section0, file$5, 267, 2, 6444);
+    			add_location(section0, file$5, 268, 2, 6461);
     			attr_dev(section1, "class", "margin-top svelte-jo13mg");
-    			add_location(section1, file$5, 294, 2, 7231);
+    			add_location(section1, file$5, 295, 2, 7248);
     			attr_dev(section2, "class", "uk-margin-bottom bottom-nav svelte-jo13mg");
-    			add_location(section2, file$5, 311, 2, 7770);
+    			add_location(section2, file$5, 311, 2, 7750);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, hr, anchor);
@@ -2284,7 +2237,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(264:0) {#if hasCharacters}",
+    		source: "(265:0) {#if hasCharacters}",
     		ctx
     	});
 
@@ -2308,7 +2261,7 @@ var app = (function () {
     			section = element("section");
     			create_component(footer.$$.fragment);
     			attr_dev(section, "class", "svelte-jo13mg");
-    			add_location(section, file$5, 342, 4, 8727);
+    			add_location(section, file$5, 342, 4, 8707);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2351,7 +2304,7 @@ var app = (function () {
     	return block;
     }
 
-    // (271:4) {#if previousPage != '' || nextPage != ''}
+    // (272:4) {#if previousPage != '' || nextPage != ''}
     function create_if_block_3(ctx) {
     	let button0;
     	let i0;
@@ -2368,15 +2321,15 @@ var app = (function () {
     			button1 = element("button");
     			i1 = element("i");
     			attr_dev(i0, "class", "fas fa-arrow-left");
-    			add_location(i0, file$5, 275, 8, 6735);
+    			add_location(i0, file$5, 276, 8, 6752);
     			attr_dev(button0, "class", "uk-button uk-button-default mainButton svelte-jo13mg");
     			button0.disabled = /*prevIsDisabled*/ ctx[5];
-    			add_location(button0, file$5, 271, 6, 6594);
+    			add_location(button0, file$5, 272, 6, 6611);
     			attr_dev(i1, "class", "fas fa-arrow-right");
-    			add_location(i1, file$5, 281, 8, 6926);
+    			add_location(i1, file$5, 282, 8, 6943);
     			attr_dev(button1, "class", "uk-button uk-button-default mainButton svelte-jo13mg");
     			button1.disabled = /*nextIsDisabled*/ ctx[6];
-    			add_location(button1, file$5, 277, 6, 6789);
+    			add_location(button1, file$5, 278, 6, 6806);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, button0, anchor);
@@ -2412,34 +2365,33 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(271:4) {#if previousPage != '' || nextPage != ''}",
+    		source: "(272:4) {#if previousPage != '' || nextPage != ''}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (299:4) {#each characters as character}
+    // (300:4) {#each characters as character}
     function create_each_block(ctx) {
     	let current;
 
     	const card = new Card({
     			props: {
-    				name: /*character*/ ctx[32].name,
-    				status: /*character*/ ctx[32].status,
-    				species: /*character*/ ctx[32].species,
-    				gender: /*character*/ ctx[32].gender,
-    				origin: /*character*/ ctx[32].origin.name,
-    				imgUrl: /*character*/ ctx[32].image,
-    				linkImage: /*character*/ ctx[32].image,
-    				statusClass: /*character*/ ctx[32].status == "Dead"
+    				name: /*character*/ ctx[33].name,
+    				status: /*character*/ ctx[33].status,
+    				species: /*character*/ ctx[33].species,
+    				gender: /*character*/ ctx[33].gender,
+    				origin: /*character*/ ctx[33].origin.name,
+    				image: /*character*/ ctx[33].image,
+    				statusClass: /*character*/ ctx[33].status == "Dead"
     				? "fas fa-skull-crossbones"
     				: ""
     			},
     			$$inline: true
     		});
 
-    	card.$on("click", /*click_handler*/ ctx[27]);
+    	card.$on("click", /*click_handler*/ ctx[28]);
 
     	const block = {
     		c: function create() {
@@ -2451,15 +2403,14 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const card_changes = {};
-    			if (dirty[0] & /*characters*/ 2) card_changes.name = /*character*/ ctx[32].name;
-    			if (dirty[0] & /*characters*/ 2) card_changes.status = /*character*/ ctx[32].status;
-    			if (dirty[0] & /*characters*/ 2) card_changes.species = /*character*/ ctx[32].species;
-    			if (dirty[0] & /*characters*/ 2) card_changes.gender = /*character*/ ctx[32].gender;
-    			if (dirty[0] & /*characters*/ 2) card_changes.origin = /*character*/ ctx[32].origin.name;
-    			if (dirty[0] & /*characters*/ 2) card_changes.imgUrl = /*character*/ ctx[32].image;
-    			if (dirty[0] & /*characters*/ 2) card_changes.linkImage = /*character*/ ctx[32].image;
+    			if (dirty[0] & /*characters*/ 2) card_changes.name = /*character*/ ctx[33].name;
+    			if (dirty[0] & /*characters*/ 2) card_changes.status = /*character*/ ctx[33].status;
+    			if (dirty[0] & /*characters*/ 2) card_changes.species = /*character*/ ctx[33].species;
+    			if (dirty[0] & /*characters*/ 2) card_changes.gender = /*character*/ ctx[33].gender;
+    			if (dirty[0] & /*characters*/ 2) card_changes.origin = /*character*/ ctx[33].origin.name;
+    			if (dirty[0] & /*characters*/ 2) card_changes.image = /*character*/ ctx[33].image;
 
-    			if (dirty[0] & /*characters*/ 2) card_changes.statusClass = /*character*/ ctx[32].status == "Dead"
+    			if (dirty[0] & /*characters*/ 2) card_changes.statusClass = /*character*/ ctx[33].status == "Dead"
     			? "fas fa-skull-crossbones"
     			: "";
 
@@ -2483,7 +2434,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(299:4) {#each characters as character}",
+    		source: "(300:4) {#each characters as character}",
     		ctx
     	});
 
@@ -2507,15 +2458,15 @@ var app = (function () {
     			button1 = element("button");
     			i1 = element("i");
     			attr_dev(i0, "class", "fas fa-arrow-left");
-    			add_location(i0, file$5, 321, 8, 8111);
+    			add_location(i0, file$5, 321, 8, 8091);
     			attr_dev(button0, "class", "uk-button uk-button-default svelte-jo13mg");
     			button0.disabled = /*prevIsDisabled*/ ctx[5];
-    			add_location(button0, file$5, 316, 6, 7930);
+    			add_location(button0, file$5, 316, 6, 7910);
     			attr_dev(i1, "class", "fas fa-arrow-right");
-    			add_location(i1, file$5, 328, 8, 8342);
+    			add_location(i1, file$5, 328, 8, 8322);
     			attr_dev(button1, "class", "uk-button uk-button-default svelte-jo13mg");
     			button1.disabled = /*nextIsDisabled*/ ctx[6];
-    			add_location(button1, file$5, 323, 6, 8165);
+    			add_location(button1, file$5, 323, 6, 8145);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, button0, anchor);
@@ -2527,9 +2478,9 @@ var app = (function () {
 
     			dispose = [
     				listen_dev(button0, "click", /*getPreviousPage*/ ctx[15], false, false, false),
-    				listen_dev(button0, "click", /*click_handler_2*/ ctx[28], false, false, false),
+    				listen_dev(button0, "click", /*click_handler_2*/ ctx[29], false, false, false),
     				listen_dev(button1, "click", /*getNextPage*/ ctx[14], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_3*/ ctx[29], false, false, false)
+    				listen_dev(button1, "click", /*click_handler_3*/ ctx[30], false, false, false)
     			];
     		},
     		p: function update(ctx, dirty) {
@@ -2569,7 +2520,7 @@ var app = (function () {
     	let section1_outro;
     	let current;
     	const erroralert = new ErrorAlert({ $$inline: true });
-    	erroralert.$on("click", /*click_handler_4*/ ctx[31]);
+    	erroralert.$on("click", /*click_handler_4*/ ctx[32]);
 
     	const footer = new Footer({
     			props: { positionClass: "relative" },
@@ -2584,9 +2535,9 @@ var app = (function () {
     			section1 = element("section");
     			create_component(footer.$$.fragment);
     			attr_dev(section0, "class", "svelte-jo13mg");
-    			add_location(section0, file$5, 356, 2, 9043);
+    			add_location(section0, file$5, 356, 2, 9023);
     			attr_dev(section1, "class", "svelte-jo13mg");
-    			add_location(section1, file$5, 359, 2, 9123);
+    			add_location(section1, file$5, 359, 2, 9103);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section0, anchor);
@@ -2685,7 +2636,7 @@ var app = (function () {
     		});
 
     	modal.$on("searchCharacters", /*searchCharacters*/ ctx[16]);
-    	modal.$on("closeModal", /*closeModal_handler*/ ctx[30]);
+    	modal.$on("closeModal", /*closeModal_handler*/ ctx[31]);
     	let if_block1 = /*hasError*/ ctx[4] && create_if_block(ctx);
 
     	const block = {
@@ -2708,18 +2659,18 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			if_block1_anchor = empty();
     			attr_dev(button0, "class", "uk-button uk-button-default  svelte-jo13mg");
-    			add_location(button0, file$5, 244, 4, 5861);
+    			add_location(button0, file$5, 245, 4, 5878);
     			attr_dev(i, "class", "fas fa-search");
-    			add_location(i, file$5, 256, 6, 6209);
+    			add_location(i, file$5, 257, 6, 6226);
     			attr_dev(button1, "class", "uk-button uk-button-default margin-bottom svelte-jo13mg");
     			attr_dev(button1, "href", "#search-modal");
     			attr_dev(button1, "uk-toggle", "");
-    			add_location(button1, file$5, 247, 4, 5975);
+    			add_location(button1, file$5, 248, 4, 5992);
     			attr_dev(section, "class", "uk-margin-bottom svelte-jo13mg");
     			attr_dev(section, "id", "home");
-    			add_location(section, file$5, 243, 2, 5812);
+    			add_location(section, file$5, 244, 2, 5829);
     			attr_dev(div, "class", "container svelte-jo13mg");
-    			add_location(div, file$5, 242, 0, 5738);
+    			add_location(div, file$5, 243, 0, 5755);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2750,7 +2701,7 @@ var app = (function () {
 
     			dispose = [
     				listen_dev(button0, "click", /*getCharacters*/ ctx[13], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_1*/ ctx[26], false, false, false)
+    				listen_dev(button1, "click", /*click_handler_1*/ ctx[27], false, false, false)
     			];
     		},
     		p: function update(ctx, dirty) {
@@ -2892,6 +2843,7 @@ var app = (function () {
     	let originalSrc = "assets/banner.png";
     	let invertBgColor = "background-color:white;";
     	let invertSrc = "assets/invertRotateBanner.png";
+    	let count = 0;
 
     	// let resetModal;
     	function twitch() {
@@ -3155,6 +3107,7 @@ var app = (function () {
     		originalSrc,
     		invertBgColor,
     		invertSrc,
+    		count,
     		twitch,
     		checkPages,
     		resetCharacters,
@@ -3184,6 +3137,7 @@ var app = (function () {
     		if ("originalSrc" in $$props) originalSrc = $$props.originalSrc;
     		if ("invertBgColor" in $$props) invertBgColor = $$props.invertBgColor;
     		if ("invertSrc" in $$props) invertSrc = $$props.invertSrc;
+    		if ("count" in $$props) count = $$props.count;
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -3216,6 +3170,7 @@ var app = (function () {
     		originalSrc,
     		invertBgColor,
     		invertSrc,
+    		count,
     		checkPages,
     		click_handler_1,
     		click_handler,

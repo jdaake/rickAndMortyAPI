@@ -24,6 +24,7 @@
   let originalSrc = "assets/banner.png";
   let invertBgColor = "background-color:white;";
   let invertSrc = "assets/invertRotateBanner.png";
+  let count = 0;
   // let resetModal;
 
   function twitch() {
@@ -304,8 +305,7 @@
         species={character.species}
         gender={character.gender}
         origin={character.origin.name}
-        imgUrl={character.image}
-        linkImage={character.image}
+        image={character.image}
         statusClass={character.status == 'Dead' ? 'fas fa-skull-crossbones' : ''} />
     {/each}
   </section>
