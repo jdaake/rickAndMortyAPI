@@ -56,7 +56,7 @@
   }
 </style>
 
-<div class="container">
+<div class="container" uk-parallax="opacity: 0,1; y: 400,0; viewport: 0.35;">
   <header class="image uk-inline" uk-lightbox="transition: fade">
     <a href={image}>
       <img src={image} alt={name} />
