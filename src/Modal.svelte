@@ -45,7 +45,7 @@
     border-color: rgba(141, 225, 86, 1);
     outline: none;
   }
-  span {
+  label {
     display: block;
     margin-bottom: 0.5rem;
     width: 100%;
@@ -66,30 +66,38 @@
       </h2>
     </div>
     <div class="uk-modal-body">
-      <span for="characterName">Name:</span>
-      <input
-        {autofocus}
-        bind:value={characterName}
-        type="text"
-        name="characterName" />
-      <span for="characterStatus">Status:</span>
-      <input
-        bind:value={characterStatus}
-        uk-tooltip="Dead, alive, or unknown"
-        type="text"
-        name="characterStatus" />
-      <span for="characterSpecies">Species:</span>
-      <input
-        bind:value={characterSpecies}
-        uk-tooltip="Human, humanoid, robot, unknown, etc."
-        type="text"
-        name="characterSpecies" />
-      <span for="characterGender">Gender:</span>
-      <input
-        bind:value={characterGender}
-        uk-tooltip="Male or Female"
-        type="text"
-        name="characterGender" />
+      <label for="characterName">
+        Name:
+        <input
+          {autofocus}
+          bind:value={characterName}
+          type="text"
+          name="characterName" />
+      </label>
+      <label for="characterStatus">
+        Status:
+        <input
+          bind:value={characterStatus}
+          uk-tooltip="Dead, alive, or unknown"
+          type="text"
+          name="characterStatus" />
+      </label>
+      <label for="characterSpecies">
+        Species:
+        <input
+          bind:value={characterSpecies}
+          uk-tooltip="Human, humanoid, robot, unknown, etc."
+          type="text"
+          name="characterSpecies" />
+      </label>
+      <label for="characterGender">
+        Gender:
+        <input
+          bind:value={characterGender}
+          uk-tooltip="Male or Female"
+          type="text"
+          name="characterGender" />
+      </label>
     </div>
     <div class="uk-modal-footer uk-text-right">
       <button
